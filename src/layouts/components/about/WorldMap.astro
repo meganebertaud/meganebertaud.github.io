@@ -48,8 +48,11 @@ const pins = worldmap
             >
               <button
                 type="button"
-                class="worldmap-pin absolute -left-3 -top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary shadow-lg ring-4 ring-white transition duration-300 hover:scale-125 focus:scale-125 focus:outline-none focus:ring-primary/30"
+                class="worldmap-pin absolute -left-4 -top-4 flex h-8 w-8 items-center justify-center rounded-full bg-primary shadow-lg ring-4 ring-white transition duration-300 hover:scale-125 focus:scale-125 focus:outline-none focus:ring-primary/30 md:-left-3 md:-top-3 md:h-6 md:w-6"
                 aria-label={`${pin.name} : ${pin.summary ?? "expérience professionnelle"}`}
+                aria-expanded={index === 0 ? "true" : "false"}
+                data-worldmap-trigger
+                data-worldmap-index={index}
               >
                 <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-30 motion-safe:animate-ping" />
                 <span class="relative h-2.5 w-2.5 rounded-full bg-white" />
@@ -63,7 +66,7 @@ const pins = worldmap
               </span>
               {pin.summary && (
                 <div
-                  class={`pointer-events-none absolute top-6 z-50 w-80 origin-top rounded-2xl bg-white p-5 text-left text-sm leading-relaxed text-text opacity-0 shadow-2xl ring-1 ring-border/50 transition duration-300 group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:translate-y-1 group-focus-within:opacity-100 ${
+                  class={`pointer-events-none absolute top-6 z-50 hidden w-80 origin-top rounded-2xl bg-white p-5 text-left text-sm leading-relaxed text-text opacity-0 shadow-2xl ring-1 ring-border/50 transition duration-300 group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:translate-y-1 group-focus-within:opacity-100 md:block ${
                     pin.align === "left" ? "right-0" : "left-0"
                   }`}
                 >
@@ -76,10 +79,86 @@ const pins = worldmap
             </div>
           ))}
         </div>
+
+        <div class="mx-auto mt-6 max-w-[680px] rounded-3xl bg-white p-5 shadow-lg ring-1 ring-border/50 md:hidden">
+          <p class="mb-4 text-sm font-semibold text-text-dark">
+            Appuyez sur une ville pour afficher le détail.
+          </p>
+          <div class="mb-4 flex flex-wrap gap-2">
+            {pins.map((pin, index) => (
+              <button
+                type="button"
+                class={`rounded-full px-3 py-1.5 text-sm font-semibold transition ${
+                  index === 0
+                    ? "bg-primary text-white"
+                    : "bg-light text-text-dark"
+                }`}
+                data-worldmap-trigger
+                data-worldmap-chip
+                data-worldmap-index={index}
+              >
+                {pin.name}
+              </button>
+            ))}
+          </div>
+          {pins.map((pin, index) => (
+            <article
+              class={index === 0 ? "" : "hidden"}
+              data-worldmap-panel
+              data-worldmap-index={index}
+            >
+              <h3 class="mb-2 text-xl font-semibold text-text-dark">
+                {pin.name}
+              </h3>
+              {pin.summary && (
+                <p
+                  class="text-sm leading-relaxed"
+                  set:html={markdownify(pin.summary)}
+                />
+              )}
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   )
 }
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const triggers = document.querySelectorAll("[data-worldmap-trigger]");
+    const chips = document.querySelectorAll("[data-worldmap-chip]");
+    const panels = document.querySelectorAll("[data-worldmap-panel]");
+
+    const activateLocation = (index: string) => {
+      triggers.forEach((trigger) => {
+        const isActive = trigger.dataset.worldmapIndex === index;
+        trigger.setAttribute("aria-expanded", String(isActive));
+      });
+
+      chips.forEach((chip) => {
+        const isActive = chip.dataset.worldmapIndex === index;
+        chip.classList.toggle("bg-primary", isActive);
+        chip.classList.toggle("text-white", isActive);
+        chip.classList.toggle("bg-light", !isActive);
+        chip.classList.toggle("text-text-dark", !isActive);
+      });
+
+      panels.forEach((panel) => {
+        panel.classList.toggle("hidden", panel.dataset.worldmapIndex !== index);
+      });
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const index = trigger.dataset.worldmapIndex;
+        if (index) {
+          activateLocation(index);
+        }
+      });
+    });
+  });
+</script>
 
 <style>
   .worldmap-pin {
