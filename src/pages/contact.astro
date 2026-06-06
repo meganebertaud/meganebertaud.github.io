@@ -10,7 +10,8 @@ const entry = (await getEntry(
   "contact",
   "-index"
 )) as CollectionEntry<"contact">;
-const { contact_form_action, appointment_url } = config.params;
+const { appointment_url, cabinet, location, availability, email, phone } =
+  config.params;
 const contact = entry.data;
 const page_data = {
   ...contact,
@@ -36,10 +37,11 @@ const page_data = {
         <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
           <div class="contact-img relative inline-flex pb-5 pl-5">
             <Image
-              src="/images/contact-img.png"
+              class="rounded-[2rem] shadow-xl"
+              src="/images/occupational-therapy.jpg"
               height={544}
               width={500}
-              alt=""
+              alt="Ergothérapeute en extérieur"
             />
             <Image
               class="absolute bottom-0 left-0 -z-[1] h-14 w-14"
@@ -66,56 +68,23 @@ const page_data = {
             </a>
           </div>
 
-          <form
-            class="lg:max-w-[484px]"
-            action={contact_form_action}
-            method="POST"
-          >
-            <div class="form-group mb-5">
-              <label class="form-label" for="name">Nom complet</label>
-              <input
-                class="form-control"
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Votre nom complet"
-              />
+          <div class="grid gap-4 lg:max-w-[484px]">
+            <div class="rounded-xl bg-white p-5 shadow-lg ring-1 ring-border/50">
+              <h2 class="h5 mb-2">Par e-mail</h2>
+              <a class="hover:text-primary" href={`mailto:${email}`}>{email}</a>
             </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="email">Adresse e-mail</label>
-              <input
-                class="form-control"
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Votre adresse e-mail"
-              />
+
+            <div class="rounded-xl bg-white p-5 shadow-lg ring-1 ring-border/50">
+              <h2 class="h5 mb-2">Par téléphone</h2>
+              <a class="hover:text-primary" href={`tel:${phone}`}>{phone}</a>
             </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="reason">Motif</label>
-              <select name="reason" id="reason" class="form-select" required>
-                <option value="">Sélectionnez un motif</option>
-                <option value="renseignements">Demande de renseignements</option>
-                <option value="collaboration">Projet de collaboration</option>
-                <option value="opportunite">Opportunité professionnelle</option>
-                <option value="autre">Autre</option>
-              </select>
+
+            <div class="rounded-xl bg-white p-5 shadow-lg ring-1 ring-border/50">
+              <h2 class="h5 mb-2">{cabinet}</h2>
+              <p>{location}</p>
+              {availability && <p class="mt-2">{availability}</p>}
             </div>
-            <div class="form-group mb-5">
-              <label class="form-label" for="message">Votre message</label>
-              <textarea
-                class="form-control"
-                id="message"
-                name="message"
-                cols="30"
-                rows="6"></textarea>
-            </div>
-            <input
-              class="btn btn-primary block w-full"
-              type="submit"
-              value="Envoyer le message"
-            />
-          </form>
+          </div>
         </div>
       </div>
     </div>
