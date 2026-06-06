@@ -17,27 +17,119 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand flex items-center gap-2.5">
-  {
-    src || logo ? (
-      <>
-        <Image
-          class="rounded-full"
-          width={logo_width.replace("px", "") * 2}
-          height={logo_height.replace("px", "") * 2}
-          src={src ? src : logo}
-          alt={title}
-          style={{
-            height: logo_height.replace("px", "") + "px",
-            width: logo_width.replace("px", "") + "px",
-          }}
-        />
-        {logo_text && <span class="font-secondary text-xl leading-tight">{logo_text}</span>}
-      </>
-    ) : logo_text ? (
-      logo_text
-    ) : (
-      title
-    )
-  }
-</a>
+<div class="logo-viewer">
+  <a
+    href="/"
+    class="navbar-brand flex items-center gap-2.5"
+    data-logo-trigger
+    aria-haspopup="dialog"
+  >
+    {
+      src || logo ? (
+        <>
+          <Image
+            class="rounded-full"
+            width={logo_width.replace("px", "") * 2}
+            height={logo_height.replace("px", "") * 2}
+            src={src ? src : logo}
+            alt={title}
+            style={{
+              height: logo_height.replace("px", "") + "px",
+              width: logo_width.replace("px", "") + "px",
+            }}
+          />
+          {logo_text && <span class="font-secondary text-xl leading-tight">{logo_text}</span>}
+        </>
+      ) : logo_text ? (
+        logo_text
+      ) : (
+        title
+      )
+    }
+  </a>
+
+  <div
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-text-dark/70 px-5 py-8 backdrop-blur-sm"
+    data-logo-modal
+    role="dialog"
+    aria-modal="true"
+    aria-label="Logo Mégane Bertaud agrandi"
+  >
+    <div class="relative w-full max-w-sm rounded-3xl bg-white p-8 text-center shadow-2xl">
+      <button
+        type="button"
+        class="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-light text-2xl leading-none text-text-dark transition hover:bg-primary hover:text-white"
+        data-logo-close
+        aria-label="Fermer le logo agrandi"
+      >
+        ×
+      </button>
+      {
+        src || logo ? (
+          <Image
+            class="mx-auto rounded-full"
+            width={logo_width.replace("px", "") * 6}
+            height={logo_height.replace("px", "") * 6}
+            src={src ? src : logo}
+            alt={title}
+            style={{
+              height: Number(logo_height.replace("px", "")) * 3 + "px",
+              width: Number(logo_width.replace("px", "")) * 3 + "px",
+            }}
+          />
+        ) : null
+      }
+      <p class="mt-5 text-center font-secondary text-2xl leading-tight text-text-dark">
+        {logo_text || title}
+      </p>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll("[data-logo-trigger]").forEach((trigger) => {
+      if (trigger.dataset.logoBound === "true") return;
+
+      trigger.dataset.logoBound = "true";
+      trigger.addEventListener("click", (event) => {
+        const container = trigger.closest(".logo-viewer");
+        const modal = container?.querySelector("[data-logo-modal]");
+
+        if (!modal) return;
+
+        event.preventDefault();
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modal.querySelector("[data-logo-close]")?.focus();
+      });
+    });
+
+    document.querySelectorAll("[data-logo-modal]").forEach((modal) => {
+      if (modal.dataset.logoBound === "true") return;
+
+      modal.dataset.logoBound = "true";
+      const closeModal = () => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      };
+
+      modal.querySelector("[data-logo-close]")?.addEventListener("click", closeModal);
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) closeModal();
+      });
+    });
+
+    if (window.logoViewerKeydownBound) return;
+
+    window.logoViewerKeydownBound = true;
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+
+      document.querySelectorAll("[data-logo-modal]").forEach((modal) => {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      });
+    });
+  });
+</script>
