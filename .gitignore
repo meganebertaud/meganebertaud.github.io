@@ -21,5 +21,8 @@ package-lock.json
 # macOS-specific files
 .DS_Store
 
+# local source photos
+mes_photos/
+
 # ignore .astro directory
 .astro
