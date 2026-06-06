@@ -1,89 +1,134 @@
 ---
-title: "About"
-page_title: "About our company"
-meta_title: ""
-description: ""
+title: "À propos"
+page_title: "Ergothérapeute D.E., au service de l'autonomie"
+meta_title: "À propos — Mégane Bertaud, ergothérapeute"
+description: "Le parcours et l'approche de Mégane Bertaud, ergothérapeute orientée pédiatrie, avec une expertise auprès d'adultes et de personnes âgées."
 image: ""
-buttons:
-  - label: Download The Theme
-    link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
-  - label: Learn More
-    link: "#"
-    outline: true
-    enable: true
+buttons: []
+
+# profile highlights
+profile_highlights:
+  - title: "Comprendre l'enfant dans sa globalité"
+    content: "Ma licence de psychologie nourrit mon regard sur le développement, le comportement, les émotions et l'environnement familial, afin de proposer un accompagnement plus ajusté."
+  - title: "Construire l'accompagnement ensemble"
+    content: "La formation à l'entretien motivationnel m'aide à favoriser l'adhésion, à écouter les priorités de chacun et à construire des objectifs concrets avec l'enfant, la famille ou l'adulte accompagné."
+  - title: "Observer pour mieux adapter"
+    content: "La mesure des fonctions motrices me permet d'objectiver les capacités, de suivre les progrès et d'adapter les activités ou le matériel au plus près des besoins du quotidien."
 
 # counter
 counter:
-  - name: "Customers"
-    number: 25
-    measurement: M
-    color: "#A3A1FB"
-  - name: "Customers"
-    number: 440
-    measurement: M
-    color: "#5EE2A0"
-  - name: "Customers"
-    number: 50
-    measurement: K
-    color: "#FE6019"
-  - name: "Customers"
-    number: 20
-    measurement: K
-    color: "#FEC163"
+  - name: "Pays & territoires d'exercice"
+    number: 5
+    measurement: ""
+    color: "#C16C58"
+  - name: "Expériences professionnelles"
+    number: 7
+    measurement: ""
+    color: "#D98C7A"
+  - name: "Formations complémentaires"
+    number: 3
+    measurement: ""
+    color: "#B0846B"
+  - name: "Diplôme D.E. — HEPL de Liège"
+    number: 2020
+    measurement: ""
+    color: "#E5B299"
 
-# Gallery
-gallery:
-  title: We started with one single goal Empower entrepreneurs
-  images:
-    - "/images/about/gallery-img-1.png"
-    - "/images/about/gallery-img-3.png"
-    - "/images/about/gallery-img-2.png"
+# World map of work locations
+worldmap:
+  title: Une pratique nourrie par des expériences variées, en France et à l'international
+  locations:
+    - name: Bordeaux
+      summary: Expériences en centres hospitaliers et centres de rééducation, autour de la neurologie, de la traumatologie, des blessés médullaires, des grands brûlés et de la gériatrie. Ces postes ont renforcé ma pratique de la rééducation fonctionnelle, de l'évaluation de l'autonomie et de l'accompagnement du retour au quotidien.
+      lat: 44.84
+      lng: -0.58
+    - name: Liège
+      summary: Travail à Liège auprès d'enfants dans un cadre pédiatrique et orthopédique, avec rééducation, adaptations concrètes, aménagements du quotidien et création d'outils personnalisés. Cette expérience a nourri mon intérêt pour le suivi de l'enfant, la collaboration avec les familles et le travail pluridisciplinaire.
+      lat: 50.63
+      lng: 5.57
+    - name: Le Carbet
+      summary: Intervention au Carbet en hospitalisation de jour et en traumatologie, avec des prises en charge individuelles et des groupes thérapeutiques. J'y ai notamment travaillé autour des douleurs du dos, du lymphoedème, des troubles vésico-sphinctériens et de la reprise progressive des activités du quotidien.
+      lat: 14.71
+      lng: -61.18
+    - name: Lomé
+      summary: Mission humanitaire auprès d'enfants présentant notamment autisme, paralysie cérébrale ou TDAH. J'y ai développé des accompagnements avec orthèses artisanales, installations, mobilisations, stimulation sensorielle, supports PECS, visites à domicile et adaptation de l'environnement avec les ressources locales.
+      lat: 6.13
+      lng: 1.22
+    - name: Rishikesh
+      summary: Formation Yoga Teacher Training 200h à Rishikesh, centrée sur la pratique du mouvement, la respiration, la méditation, l'anatomie et l'attention portée au corps. Cette expérience enrichit ma réflexion d'ergothérapeute sur le rythme, la présence, l'écoute corporelle et l'adaptation du mouvement à chacun.
+      lat: 30.1
+      lng: 78.27
+    - name: Nouméa
+      summary: Pratique dans un contexte insulaire avec positionnement, visites à domicile, rééducation, réadaptation et ateliers thérapeutiques. Cette expérience a renforcé ma capacité à m'adapter aux environnements de vie, à proposer des solutions réalistes et à construire des accompagnements au plus près du quotidien.
+      lat: -22.27
+      lng: 166.45
+      align: left
 
 ## our works
 features:
-  title: The six core work <br /> drive everything do
+  title: Les valeurs qui guident ma pratique
   button:
-    label: Download The Theme
-    link: "https://themefisher.com/astro-themes/pinwheel-astro"
-    enable: true
+    label: Me contacter
+    link: "/contact"
+    enable: false
   features_list:
-    - title: Accessibility
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Empowerement
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Excellence
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
-    - title: Innovation
-      content: Nulla porttitor acmsan tinci dunt. posuere cubilia Cudfrae Donec velit neque, autor sit amet aliuam vel
+    - title: Approche centrée sur la personne
+      content: Construire chaque accompagnement avec le patient, autour de ses besoins, de ses capacités et de son projet de vie.
+    - title: Adaptation de l'environnement
+      content: "Penser le quotidien dans son ensemble : aménagements, aides techniques et solutions concrètes pour favoriser l'autonomie."
+    - title: Travail pluridisciplinaire
+      content: Collaborer étroitement avec les équipes de soin pour une prise en charge cohérente et globale.
+    - title: Créativité clinique
+      content: Adapter mes outils et ma pratique à chaque contexte, une qualité renforcée par mes expériences à l'international.
+    - title: Approche globale du soin
+      content: Considérer la personne dans sa globalité, en intégrant le lien entre corps, mouvement et bien-être.
+    - title: Mouvement & bien-être
+      content: Une réflexion thérapeutique enrichie par une formation de yoga teacher training.
+
+## experiences
+experiences:
+  title: Des expériences qui ont façonné ma pratique
+  experience_list:
+    - title: "Bénévolat au Togo : l'ergothérapie en contexte humanitaire"
+      image: "/images/experience-togo.jpg"
+      images:
+        - "/images/experience-togo-2.jpg"
+        - "/images/experience-togo-3.jpg"
+      content: |
+        Durant six mois, j'ai eu le privilège de m'engager bénévolement au Togo au sein d'une école accueillant des enfants porteurs d'autisme, de paralysie cérébrale et de TDAH. Une expérience fondatrice, humaine et clinique, qui a profondément façonné ma vision de l'ergothérapie.
+
+        Auprès de chaque enfant, j'ai déployé une approche propre à sa pathologie : régulation sensorielle et tableau de communication PECS pour les enfants autistes, positionnement et fabrication d'orthèses artisanales pour prévenir les déformations chez les enfants paralysés cérébraux, structuration de l'environnement et supports visuels pour les enfants avec TDAH. Des visites à domicile ont complété ce suivi, pour ancrer le soin dans le quotidien des familles.
+
+        Ce contexte aux ressources limitées m'a appris l'essentiel du métier : adapter, co-construire, innover avec ce qui existe. Concevoir des rampes d'accessibilité avec des artisans locaux, transformer une salle de classe en environnement inclusif, mobiliser des cagnottes solidaires pour financer des activités thérapeutiques — autant de démarches qui ont renforcé ma conviction que l'ergothérapie est, avant tout, une pratique du réel.
+
+        Travailler en équipe pluridisciplinaire dans un contexte interculturel fort a été une richesse immense. Apprendre à écouter avant d'agir, à m'appuyer sur les savoirs locaux, à collaborer avec enseignants, éducateurs et kinésithérapeutes — cette humilité et cette capacité d'adaptation nourrissent aujourd'hui directement ma pratique libérale.
+    - title: "Formation d'enseignante de yoga (200h) — Rishikesh, Inde"
+      images_below: true
+      images:
+        - "/images/experience-yoga.jpg"
+        - "/images/experience-yoga-2.jpg"
+      content: |
+        En octobre 2025, j'ai pris le temps de faire une pause dans mon rythme professionnel pour vivre une expérience un peu différente : une formation de 200 heures en enseignement du yoga, après quelques jours de voyage au Sri Lanka qui ont déjà marqué un premier ralentissement.
+
+        Pendant un mois, l'immersion a été totale. Un rythme soutenu, six jours sur sept, structuré autour de la pratique et de l'apprentissage : environ quatre heures de yoga quotidien (Ashtanga et Hatha), deux heures de méditation par jour, des séances de yoga nidra, ainsi que des temps dédiés à l'anatomie et à la philosophie du yoga.
+
+        L'expérience allait bien au-delà de la pratique physique. Dix jours de silence, des repas pris de manière ritualisée, un cadre simple invitant à se recentrer et à observer autrement le corps, le mouvement et l'attention portée à soi.
+
+        En tant qu'ergothérapeute, cette immersion a particulièrement résonné avec ma pratique professionnelle. Travailler la présence, l'écoute corporelle, la respiration et l'adaptation du mouvement rappelle combien le soin passe aussi par la manière d'habiter son corps et de retrouver un équilibre dans le quotidien.
+
+        Je repars de cette expérience avec de nouveaux outils, mais surtout avec une autre qualité de regard sur le mouvement, l'accompagnement et le rythme nécessaire à chacun.
+
+        Une parenthèse exigeante, parfois déstabilisante, mais profondément enrichissante, que j'ai aujourd'hui envie d'intégrer progressivement dans ma pratique.
 
 ## members
 members:
-  title: This is who we are
-  description: Donec sollicitudin molestie malesda. Donec sollitudin mol estie ultricies ligula sed magna dictum
-  member_list:
-    - name: Eleanor Pena
-      field: Co-founder & COO
-      image: "/images/users/user-1.png"
-    - name: Bukiakta Bansalo
-      field: Product Manager
-      image: "/images/users/user-2.png"
-    - name: Ortrin Okaster
-      field: Software Engineer
-      image: "/images/users/user-3.png"
-    - name: Eleanor Pena
-      field: Co-founder & COO
-      image: "/images/users/user-1.png"
-    - name: Bukiakta Bansalo
-      field: Product Manager
-      image: "/images/users/user-2.png"
-    - name: Ortrin Okaster
-      field: Software Engineer
-      image: "/images/users/user-3.png"
+  title: ""
+  description: ""
+  member_list: []
 ---
 
-Donec sollicitudin molestie malesda. Donec sollitudin molestie malesuada. Mauris pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Lorem
+Au cours de mon parcours, j'ai eu l'opportunité d'accompagner des enfants présentant des profils variés : troubles du neurodéveloppement, troubles du spectre de l'autisme, paralysie cérébrale, difficultés sensorielles, motrices ou encore d'apprentissage. Ces expériences m'ont permis de développer une approche individualisée, centrée sur les besoins, les capacités et le rythme de chaque enfant.
+
+Mon objectif est d'aider l'enfant à gagner en autonomie, à développer sa confiance en lui et à trouver sa place dans les activités qui sont importantes pour lui, que ce soit à la maison, à l'école ou dans ses loisirs. J'accorde également une grande importance à la collaboration avec les familles et les professionnels qui l'entourent afin de construire un accompagnement cohérent et adapté à ses objectifs.
+
+Bienveillante et à l'écoute, je veille à créer un environnement rassurant et motivant où chaque enfant peut s'épanouir, développer ses compétences et avancer à son propre rythme. Je suis convaincue que chaque enfant possède des forces sur lesquelles s'appuyer pour progresser et gagner en confiance dans son quotidien.

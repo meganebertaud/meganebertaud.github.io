@@ -17,19 +17,23 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand block">
+<a href="/" class="navbar-brand flex items-center gap-2.5">
   {
     src || logo ? (
-      <Image
-        width={logo_width.replace("px", "") * 2}
-        height={logo_height.replace("px", "") * 2}
-        src={src ? src : logo}
-        alt={title}
-        style={{
-          height: logo_height.replace("px", "") + "px",
-          width: logo_width.replace("px", "") + "px",
-        }}
-      />
+      <>
+        <Image
+          class="rounded-full"
+          width={logo_width.replace("px", "") * 2}
+          height={logo_height.replace("px", "") * 2}
+          src={src ? src : logo}
+          alt={title}
+          style={{
+            height: logo_height.replace("px", "") + "px",
+            width: logo_width.replace("px", "") + "px",
+          }}
+        />
+        {logo_text && <span class="font-secondary text-xl leading-tight">{logo_text}</span>}
+      </>
     ) : logo_text ? (
       logo_text
     ) : (

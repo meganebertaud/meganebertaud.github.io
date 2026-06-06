@@ -1,14 +1,14 @@
 {
   "site": {
-    "title": "Pinwheel Astro",
-    "base_url": "https://pinwheel-astro.vercel.app",
+    "title": "Mégane Bertaud — Ergothérapeute D.E.",
+    "base_url": "https://meganebertaud.fr",
     "base_path": "/",
     "trailing_slash": false,
-    "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_width": "147",
-    "logo_height": "31",
-    "logo_text": "Pinwheel"
+    "favicon": "/images/logo-megane.png",
+    "logo": "/images/logo-megane.png",
+    "logo_width": "52",
+    "logo_height": "52",
+    "logo_text": "Mégane Bertaud"
   },
 
   "settings": {
@@ -22,26 +22,29 @@
   },
 
   "call_to_action": {
-    "title": "Helping teams in the world with focus",
-    "description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
+    "title": "Vous souhaitez échanger sur un projet de soin ou de collaboration ?",
+    "description": "N'hésitez pas à me contacter pour toute question, demande de collaboration ou opportunité professionnelle.",
     "button": {
-      "label": "Download The Theme",
-      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+      "label": "Me contacter",
+      "link": "/contact"
     }
   },
 
   "params": {
-    "footer_description": "Lorem ipsum dolor sit sed dmi amet, consectetur adipiscing. Cdo tellus, sed condimentum volutpat.",
-    "email": "info@andromeda.io",
-    "location": "2118 Thornridge Cir. Syracuse, Connecticut 35624",
-    "phone": "+704-555-0127",
+    "footer_description": "Ergothérapeute D.E., j'accompagne enfants et adultes en rééducation neurologique, traumatologique et réadaptation fonctionnelle, en France comme à l'international.",
+    "email": "Mbertaud.ergo@gmail.com",
+    "cabinet": "Cabinet L'Aire Familiale",
+    "location": "73 rue Condillac, 33000 Bordeaux",
+    "availability": "Mardi et mercredi de 8h à 19h",
+    "phone": "+33 7 80 29 89 66",
     "contact_form_action": "#",
-    "copyright": "Copyright © 2025 a theme by [Themefisher](https://themefisher.com)"
+    "appointment_url": "https://docorga.com/",
+    "copyright": "© 2026 Mégane Bertaud — Ergothérapeute D.E."
   },
 
   "metadata": {
-    "meta_author": "Themefisher",
+    "meta_author": "Mégane Bertaud",
     "meta_image": "/images/og-image.png",
-    "meta_description": "pinwheel astro"
+    "meta_description": "Mégane Bertaud, ergothérapeute D.E. Rééducation neurologique et traumatologique, réadaptation fonctionnelle. Expérience en France et à l'international."
   }
 }

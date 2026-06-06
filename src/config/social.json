@@ -1,24 +1,19 @@
 {
   "main": [
     {
-      "name": "facebook",
-      "icon": "FiFacebook",
-      "link": "https://www.facebook.com/"
-    },
-    {
-      "name": "Instagram",
-      "icon": "FiInstagram",
-      "link": "https://www.instagram.com/"
-    },
-    {
-      "name": "github",
-      "icon": "FiGithub",
-      "link": "https://www.github.com/"
-    },
-    {
       "name": "linkedin",
       "icon": "FiLinkedin",
-      "link": "https://www.linkedin.com/"
+      "link": "https://www.linkedin.com/in/m%C3%A9gane-bertaud-5143633b4/"
+    },
+    {
+      "name": "email",
+      "icon": "FiMail",
+      "link": "mailto:Mbertaud.ergo@gmail.com"
+    },
+    {
+      "name": "Agenda en ligne",
+      "icon": "FiCalendar",
+      "link": "https://www.doctolib.fr/cabinet-medical/bordeaux/cabinet-de-l-aire-familiale"
     }
   ]
 }

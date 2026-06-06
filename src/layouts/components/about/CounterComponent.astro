@@ -23,7 +23,7 @@ const { counter } = Astro.props;
                 color: item.color,
               }}
             >
-              +
+              {item.measurement}
             </span>
           </h2>
           <p set:html={markdownify(item.name)} />

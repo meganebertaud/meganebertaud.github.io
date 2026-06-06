@@ -1,0 +1,67 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+
+type GalleryItem = {
+  image: string;
+  alt: string;
+  caption: string;
+};
+
+type Props = {
+  title?: string;
+  intro?: string;
+  items: GalleryItem[];
+};
+
+const { title, intro, items } = Astro.props;
+---
+
+<section id="galerie" class="section bg-light">
+  <div class="container">
+    {
+      title && (
+        <div class="mx-auto mb-6 max-w-[760px] text-center">
+          <h2 set:html={markdownify(title)} />
+        </div>
+      )
+    }
+
+    {
+      intro && (
+        <div class="mx-auto mb-10 max-w-[760px] text-center">
+          <p class="text-lg" set:html={markdownify(intro)} />
+        </div>
+      )
+    }
+
+    {
+      items.length > 0 ? (
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item) => (
+            <figure class="overflow-hidden rounded-2xl bg-white shadow-lg">
+              <img
+                class="block h-72 w-full object-cover sm:h-80 lg:h-96"
+                src={item.image}
+                alt={item.alt}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption
+                class="px-5 py-4 text-sm leading-relaxed text-text"
+                set:html={markdownify(item.caption)}
+              />
+            </figure>
+          ))}
+        </div>
+      ) : (
+        <div class="mx-auto max-w-[720px] rounded-2xl bg-light p-8 text-center">
+          <h2 class="h4 mb-3">Galerie en préparation</h2>
+          <p>
+            Les premières photos seront ajoutées ici après sélection,
+            anonymisation et rédaction des légendes.
+          </p>
+        </div>
+      )
+    }
+  </div>
+</section>

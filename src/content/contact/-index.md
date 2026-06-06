@@ -1,7 +1,7 @@
 ---
 title: Contact
-page_title: Get’n touch with Our </br> Pinwheel team
-meta_title: ""
-description: ""
+page_title: Échangeons sur votre projet
+meta_title: "Contact — Mégane Bertaud, ergothérapeute D.E."
+description: "Contactez Mégane Bertaud, ergothérapeute D.E., pour toute question, collaboration ou opportunité professionnelle."
 image: ""
 ---

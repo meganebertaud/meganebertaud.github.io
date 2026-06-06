@@ -1,0 +1,98 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { marked } from "marked";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  experiences: CollectionEntry<"about">["data"]["experiences"];
+};
+
+const { experiences } = Astro.props;
+
+const items = experiences
+  ? await Promise.all(
+      experiences.experience_list.map(async (exp) => ({
+        ...exp,
+        html: await marked.parse(exp.content),
+      })),
+    )
+  : [];
+---
+
+{
+  experiences && (
+    <section class="section">
+      <div class="container">
+        <div class="row justify-center text-center">
+          <div class="md:col-10 lg:col-7">
+            <h2 set:html={markdownify(experiences.title)} />
+          </div>
+        </div>
+
+        {items.map((exp, index) =>
+          exp.images_below ? (
+            <div class="mt-10 lg:mt-16">
+              <div class="row justify-center">
+                <div class="lg:col-10">
+                  <h3 class="mb-4" set:html={markdownify(exp.title)} />
+                  <div class="content" set:html={exp.html} />
+                </div>
+              </div>
+              {exp.images && exp.images.length > 0 && (
+                <div class="gx-4 row justify-center mt-8">
+                  {exp.images.map((img) => (
+                    <div class="mt-4 sm:col-6 lg:col-5">
+                      <img
+                        class="w-full rounded-2xl object-cover shadow"
+                        src={img}
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div class="gx-5 row items-start mt-10 lg:mt-16">
+              <div
+                class={`lg:col-5 ${index % 2 === 0 ? "lg:order-0" : "lg:order-1"}`}
+              >
+                {exp.image && (
+                  <img
+                    class="w-full rounded-2xl object-cover shadow-lg"
+                    src={exp.image}
+                    alt={exp.title}
+                    loading="lazy"
+                  />
+                )}
+                {exp.images && exp.images.length > 0 && (
+                  <div class={`gx-4 row ${exp.image ? "mt-4" : ""}`}>
+                    {exp.images.map((img) => (
+                      <div class="col-6">
+                        <img
+                          class="aspect-[3/4] w-full rounded-xl object-cover shadow"
+                          src={img}
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              <div
+                class={`mt-6 lg:col-7 lg:mt-0 ${
+                  index % 2 === 0 ? "lg:order-1" : "lg:order-0"
+                }`}
+              >
+                <h3 class="mb-4" set:html={markdownify(exp.title)} />
+                <div class="content" set:html={exp.html} />
+              </div>
+            </div>
+          )
+        )}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,99 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  worldmap: CollectionEntry<"about">["data"]["worldmap"];
+};
+
+const { worldmap } = Astro.props;
+
+// Equirectangular projection (map viewBox = 360 x 180, full extent):
+// x% = (lng + 180) / 360 ; y% = (90 - lat) / 180
+const pins = worldmap
+  ? worldmap.locations.map((loc) => ({
+      ...loc,
+      left: ((loc.lng + 180) / 360) * 100,
+      top: ((90 - loc.lat) / 180) * 100,
+    }))
+  : [];
+---
+
+{
+  worldmap && (
+    <section class="section">
+      <div class="container">
+        <div class="row justify-center text-center">
+          <div class="md:col-10 lg:col-8">
+            <h2 set:html={markdownify(worldmap.title)} />
+          </div>
+        </div>
+
+        <p class="mx-auto mt-5 max-w-[680px] text-justify text-sm text-text">
+          Survolez ou cliquez sur les points de la carte pour découvrir les
+          contextes de pratique.
+        </p>
+
+        <div class="relative mx-auto mt-10 w-full max-w-[980px] rounded-[2rem] bg-white/70 p-4 shadow-xl ring-1 ring-border/60 md:p-8">
+          <img
+            src="/images/worldmap.svg"
+            alt="Carte des régions où Mégane a exercé"
+            class="w-full opacity-90"
+            loading="lazy"
+          />
+          {pins.map((pin, index) => (
+            <div
+              class="group absolute z-10 hover:z-50 focus-within:z-50"
+              style={`left:${pin.left}%; top:${pin.top}%; --delay:${index * 0.16}s;`}
+            >
+              <button
+                type="button"
+                class="worldmap-pin absolute -left-3 -top-3 flex h-6 w-6 items-center justify-center rounded-full bg-primary shadow-lg ring-4 ring-white transition duration-300 hover:scale-125 focus:scale-125 focus:outline-none focus:ring-primary/30"
+                aria-label={`${pin.name} : ${pin.summary ?? "expérience professionnelle"}`}
+              >
+                <span class="absolute inline-flex h-full w-full rounded-full bg-primary opacity-30 motion-safe:animate-ping" />
+                <span class="relative h-2.5 w-2.5 rounded-full bg-white" />
+              </button>
+              <span
+                class={`absolute top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-text-dark shadow-md transition duration-300 group-hover:bg-primary group-hover:text-white group-focus-within:bg-primary group-focus-within:text-white ${
+                  pin.align === "left" ? "right-2.5" : "left-2.5"
+                }`}
+              >
+                {pin.name}
+              </span>
+              {pin.summary && (
+                <div
+                  class={`pointer-events-none absolute top-6 z-50 w-80 origin-top rounded-2xl bg-white p-5 text-left text-sm leading-relaxed text-text opacity-0 shadow-2xl ring-1 ring-border/50 transition duration-300 group-hover:translate-y-1 group-hover:opacity-100 group-focus-within:translate-y-1 group-focus-within:opacity-100 ${
+                    pin.align === "left" ? "right-0" : "left-0"
+                  }`}
+                >
+                  <strong class="mb-1 block text-base text-text-dark">
+                    {pin.name}
+                  </strong>
+                  <span class="block text-justify" set:html={markdownify(pin.summary)} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .worldmap-pin {
+    animation: worldmap-float 2.6s ease-in-out infinite;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes worldmap-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+</style>
