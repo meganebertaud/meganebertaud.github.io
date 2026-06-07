@@ -18,6 +18,26 @@ profile_highlights:
   - title: "Réadaptation adulte"
     content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
 
+features:
+  title: Les valeurs qui guident ma pratique
+  button:
+    label: Me contacter
+    link: "/contact"
+    enable: false
+  features_list:
+    - title: Approche centrée sur la personne
+      content: Construire chaque accompagnement avec le patient, autour de ses besoins, de ses capacités et de son projet de vie.
+    - title: Adaptation de l'environnement
+      content: "Penser le quotidien dans son ensemble : aménagements, aides techniques et solutions concrètes pour favoriser l'autonomie."
+    - title: Travail pluridisciplinaire
+      content: Collaborer étroitement avec les équipes de soin pour une prise en charge cohérente et globale.
+    - title: Créativité clinique
+      content: Adapter mes outils et ma pratique à chaque contexte, une qualité renforcée par mes expériences à l'international.
+    - title: Approche globale du soin
+      content: Considérer la personne dans sa globalité, en intégrant le lien entre corps, mouvement et bien-être.
+    - title: Mouvement & bien-être
+      content: Une réflexion thérapeutique enrichie par une formation de yoga teacher training.
+
 # World map of work locations
 worldmap:
   title: Une pratique nourrie par des expériences variées, en France et à l'international
@@ -48,7 +68,7 @@ worldmap:
       lng: 166.45
       align: left
 
-## experiences
+# experiences
 experiences:
   title: Des expériences qui ont façonné ma pratique
   experience_list:
@@ -83,7 +103,7 @@ experiences:
 
         Une parenthèse exigeante, parfois déstabilisante, mais profondément enrichissante, que j'ai aujourd'hui envie d'intégrer progressivement dans ma pratique.
 
-## members
+# members
 members:
   title: ""
   description: ""
@@ -104,9 +124,9 @@ Que ce soit pour **un enfant confronté à des troubles du neurodéveloppement**
 
 Mon engagement
 
-✅ **Une écoute active** pour comprendre vos défis et vos attentes
-✅ **Des solutions concrètes** pour améliorer votre quotidien
-✅ **Un accompagnement pluridisciplinaire** en collaboration avec les familles et les professionnels de santé
-✅ **Un environnement bienveillant** où chaque progrès, petit ou grand, est célébré
+**Une écoute active** pour comprendre vos défis et vos attentes
+**Des solutions concrètes** pour améliorer votre quotidien
+**Un accompagnement pluridisciplinaire** en collaboration avec les familles et les professionnels de santé
+**Un environnement bienveillant** où chaque progrès, petit ou grand, est célébré
 
 **Ensemble, faisons de chaque défi une opportunité de grandir.**
