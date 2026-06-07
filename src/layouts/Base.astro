@@ -20,6 +20,12 @@ const fontEntries = Object.entries(theme.fonts.font_family).filter(
 
 const { title, meta_title, description, image, noindex, canonical, meta_keywords } =
   Astro.props;
+const pageImageUrl = new URL(
+  image ? image : config.metadata.meta_image,
+  config.site.base_url,
+).href;
+const siteLogoUrl = new URL(config.site.logo, config.site.base_url).href;
+const profileImageUrl = new URL("/images/megane-bertaud.png", config.site.base_url).href;
 
 // Schema.org JSON-LD for Local Business
 const localBusinessSchema = JSON.stringify({
@@ -29,7 +35,7 @@ const localBusinessSchema = JSON.stringify({
   "description": "Ergothérapeute D.E. spécialisée en rééducation neurologique, traumatologique et réadaptation fonctionnelle pour enfants et adultes.",
   "@id": "https://www.meganebertaud.fr/#localbusiness",
   "url": "https://www.meganebertaud.fr",
-  "telephone": "+33780298966",
+  "telephone": config.params.phone,
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "73 rue Condillac",
@@ -44,8 +50,8 @@ const localBusinessSchema = JSON.stringify({
     "longitude": "-0.579180"
   },
   "sameAs": ["https://www.docorga.com/"],
-  "logo": "https://www.meganebertaud.fr/images/logo-megane.png",
-  "image": "https://www.meganebertaud.fr/images/og-image.png",
+  "logo": siteLogoUrl,
+  "image": pageImageUrl,
   "hasMap": "https://www.google.com/maps/place/73+Rue+Condillac,+33000+Bordeaux/@44.837789,-0.579180",
   "priceRange": "$$"
 });
@@ -57,7 +63,7 @@ const personSchema = JSON.stringify({
   "name": "Mégane Bertaud",
   "description": "Ergothérapeute D.E. spécialisée en pédiatrie, neurologie et réadaptation fonctionnelle.",
   "url": "https://www.meganebertaud.fr",
-  "image": "https://www.meganebertaud.fr/images/megane-bertaud.png",
+  "image": profileImageUrl,
   "sameAs": ["https://www.linkedin.com/in/megane-bertaud/"],
   "hasOccupation": {
     "@type": "Occupation",
@@ -84,18 +90,16 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     }
     
     <!-- JSON-LD Schemas for SEO -->
-    <script type="application/ld+json" set:html={localBusinessSchema} />
-    <script type="application/ld+json" set:html={personSchema} />
+    <script is:inline type="application/ld+json" set:html={localBusinessSchema} />
+    <script is:inline type="application/ld+json" set:html={personSchema} />
     
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="sWZ2vh2fYMpsXu_JrPMWg-54j0SVbi_Z3JWyHKfaZkE" />
     
     <!-- favicon -->
     <link rel="shortcut icon" href={config.site.favicon} />
-    <!-- Modern favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href={config.site.favicon} />
+    <link rel="apple-touch-icon" href={config.site.logo} />
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Author and social links -->
     <link rel="me" href="https://www.linkedin.com/in/megane-bertaud/" />
@@ -149,8 +153,8 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
       )}
     />
     <!-- meta-keywords -->
-    {Astro.props.meta_keywords && (
-      <meta name="keywords" content={plainify(Astro.props.meta_keywords)} />
+    {meta_keywords && (
+      <meta name="keywords" content={plainify(meta_keywords)} />
     )}
 
     <ClientRouter />
@@ -195,17 +199,13 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     <!-- og-image -->
     <meta
       property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={pageImageUrl}
     />
 
     <!-- twitter-image -->
     <meta
       name="twitter:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={pageImageUrl}
     />
     <meta name="twitter:creator" content="@meganebertaud" />
     <meta name="twitter:site" content="@meganebertaud" />

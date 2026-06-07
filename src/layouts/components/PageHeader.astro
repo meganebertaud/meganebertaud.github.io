@@ -1,7 +1,9 @@
 ---
 import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
+import { marked } from "marked";
 const { page_data } = Astro.props || {};
 const { title, index_title, page_title, slug, content } = page_data || {};
+const contentHtml = content ? await marked.parse(content) : null;
 ---
 
 <div class="text-center">
@@ -47,7 +49,14 @@ const { title, index_title, page_title, slug, content } = page_data || {};
       page_data?.page_title ? page_data?.page_title : page_data?.title
     )}
   />
-  <div class="content" set:html={markdownify(content)} />
+  {
+    contentHtml && (
+      <div
+        class="content mx-auto mt-6 max-w-[820px] text-left"
+        set:html={contentHtml}
+      />
+    )
+  }
 
   {
     page_data.buttons && (
