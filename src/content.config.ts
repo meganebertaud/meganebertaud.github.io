@@ -109,7 +109,7 @@ const aboutCollection = defineCollection({
         measurement: z.string(),
         color: z.string(),
       }),
-    ),
+    ).optional(),
 
     // Gallery
     gallery: z
@@ -149,7 +149,7 @@ const aboutCollection = defineCollection({
           content: z.string(),
         }),
       ),
-    }),
+    }).optional(),
 
     // Experiences
     experiences: z
