@@ -1,6 +1,6 @@
 ---
 title: "À propos"
-page_title: "Mégane Bertaud, Ergothérapeute D.E. à Bordeaux"
+page_title: "À propos"
 meta_title: "Mégane Bertaud — Ergothérapeute à Bordeaux | Expertise & Approche Humaine"
 description: "Découvrez Mégane Bertaud, ergothérapeute D.E. à Bordeaux (33000). Approche centrée sur la personne, expertise en pédiatrie et réadaptation. Cabinet L'Aire Familiale."
 image: "/images/megane-bertaud.png"
@@ -119,8 +119,6 @@ members:
   member_list: []
 ---
 ### Qui suis-je ?
-
-Mégane Bertaud, ergothérapeute D.E. à Bordeaux
 
 Je mets mon expertise au service de votre autonomie et de votre bien-être au quotidien.
 

@@ -6,4 +6,3 @@ Disallow: /404.html
 
 Sitemap: https://www.meganebertaud.fr/sitemap-index.xml
 Host: https://www.meganebertaud.fr
-Crawl-delay: 2

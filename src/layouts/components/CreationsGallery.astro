@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { markdownify } from "@/lib/utils/textConverter";
 
 type GalleryItem = {
@@ -14,6 +15,21 @@ type Props = {
 };
 
 const { title, intro, items } = Astro.props;
+
+const landscapeImages = new Set([
+  "/images/creations/creation-04.jpeg",
+  "/images/creations/creation-08.jpeg",
+]);
+
+const galleryItems = items.map((item) => {
+  const isLandscape = landscapeImages.has(item.image);
+
+  return {
+    ...item,
+    width: isLandscape ? 1600 : 1200,
+    height: isLandscape ? 1200 : 1600,
+  };
+});
 ---
 
 <section id="galerie" class="section bg-light">
@@ -37,14 +53,17 @@ const { title, intro, items } = Astro.props;
     {
       items.length > 0 ? (
         <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
+          {galleryItems.map((item) => (
             <figure class="overflow-hidden rounded-2xl bg-white shadow-lg">
-              <img
+              <Image
                 class="block h-72 w-full object-cover sm:h-80 lg:h-96"
                 src={item.image}
                 alt={item.alt}
+                width={item.width}
+                height={item.height}
+                widths={[480, 768, 1024]}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 loading="lazy"
-                decoding="async"
               />
               <figcaption
                 class="px-5 py-4 text-sm leading-relaxed text-text"
