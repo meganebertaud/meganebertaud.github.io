@@ -22,14 +22,14 @@ const { title, meta_title, description, image, noindex, canonical, meta_keywords
   Astro.props;
 
 // Schema.org JSON-LD for Local Business
-const localBusinessSchema = {
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Mégane Bertaud — Ergothérapeute D.E.",
   "description": "Ergothérapeute D.E. spécialisée en rééducation neurologique, traumatologique et réadaptation fonctionnelle pour enfants et adultes.",
   "@id": "https://www.meganebertaud.fr/#localbusiness",
   "url": "https://www.meganebertaud.fr",
-  "telephone": "+33 7 80 29 89 66",
+  "telephone": "+33780298966",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "73 rue Condillac",
@@ -43,26 +43,22 @@ const localBusinessSchema = {
     "latitude": "44.837789",
     "longitude": "-0.579180"
   },
-  "sameAs": [
-    "https://www.docorga.com/"
-  ],
+  "sameAs": ["https://www.docorga.com/"],
   "logo": "https://www.meganebertaud.fr/images/logo-megane.png",
   "image": "https://www.meganebertaud.fr/images/og-image.png",
   "hasMap": "https://www.google.com/maps/place/73+Rue+Condillac,+33000+Bordeaux/@44.837789,-0.579180",
   "priceRange": "$$"
-};
+});
 
 // Schema.org JSON-LD for Person
-const personSchema = {
+const personSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Mégane Bertaud",
   "description": "Ergothérapeute D.E. spécialisée en pédiatrie, neurologie et réadaptation fonctionnelle.",
   "url": "https://www.meganebertaud.fr",
   "image": "https://www.meganebertaud.fr/images/megane-bertaud.png",
-  "sameAs": [
-    "https://www.linkedin.com/in/megane-bertaud/"
-  ],
+  "sameAs": ["https://www.linkedin.com/in/megane-bertaud/"],
   "hasOccupation": {
     "@type": "Occupation",
     "name": "Ergothérapeute"
@@ -71,7 +67,7 @@ const personSchema = {
     "@type": "CollegeOrUniversity",
     "name": "HEPL de Liège"
   }
-};
+});
 
 // Canonical URL - Fixed to handle root path correctly
 const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_url).href;
@@ -88,12 +84,8 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     }
     
     <!-- JSON-LD Schemas for SEO -->
-    <script type="application/ld+json">
-      {JSON.stringify(localBusinessSchema)}
-    </script>
-    <script type="application/ld+json">
-      {JSON.stringify(personSchema)}
-    </script>
+    <script type="application/ld+json" set:html={localBusinessSchema} />
+    <script type="application/ld+json" set:html={personSchema} />
     
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="sWZ2vh2fYMpsXu_JrPMWg-54j0SVbi_Z3JWyHKfaZkE" />
