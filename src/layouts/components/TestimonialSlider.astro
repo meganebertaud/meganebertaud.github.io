@@ -44,7 +44,7 @@ const swiperOptions: SwiperOptions = {
             <SwiperSlide>
               <div class="review">
                 <div class="review-author-avatar bg-gradient">
-                  <img src={item.avatar} alt="" />
+                  <img src={item.avatar} alt={`Avatar de ${item.author}`} loading="lazy" decoding="async" />
                 </div>
                 <h4 class="mb-2">{item.author}</h4>
                 <p class="mb-4 text-text-dark/80">{item.organization}</p>

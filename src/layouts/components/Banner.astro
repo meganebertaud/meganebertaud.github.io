@@ -24,10 +24,12 @@ const { title, button, image, content } = banner;
       <div class="mt-10 lg:col-5 lg:mt-0">
         <Image
           class="mx-auto w-full max-w-[360px] object-contain lg:max-w-[420px]"
-          alt="banner"
+          alt={title?.toString().replace(/<[^>]*>/g, '') || "Mégane Bertaud, ergothérapeute à Bordeaux"}
           src={image}
           width={603}
           height={396}
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

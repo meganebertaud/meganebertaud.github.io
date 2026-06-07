@@ -45,8 +45,9 @@ const items = experiences
                       <img
                         class="w-full rounded-2xl object-cover shadow"
                         src={img}
-                        alt=""
+                        alt={`Illustration de l'expérience : ${exp.title}`}
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   ))}
@@ -62,19 +63,21 @@ const items = experiences
                   <img
                     class="w-full rounded-2xl object-cover shadow-lg"
                     src={exp.image}
-                    alt={exp.title}
+                    alt={`Photo principale de l'expérience : ${exp.title}`}
                     loading="lazy"
+                    decoding="async"
                   />
                 )}
                 {exp.images && exp.images.length > 0 && (
                   <div class={`gx-4 row ${exp.image ? "mt-4" : ""}`}>
-                    {exp.images.map((img) => (
+                    {exp.images.map((img, idx) => (
                       <div class="col-6">
                         <img
                           class="aspect-[3/4] w-full rounded-xl object-cover shadow"
                           src={img}
-                          alt=""
+                          alt={`Photo ${idx + 1} de l'expérience : ${exp.title}`}
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     ))}

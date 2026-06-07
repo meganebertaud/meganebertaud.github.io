@@ -1,9 +1,9 @@
 ---
 title: "À propos"
 page_title: "Ergothérapeute D.E., au service de l'autonomie"
-meta_title: "À propos — Mégane Bertaud, ergothérapeute"
-description: "Le parcours et l'approche de Mégane Bertaud, ergothérapeute orientée pédiatrie, avec une expertise auprès d'adultes et de personnes âgées."
-image: ""
+meta_title: "Mégane Bertaud — Ergothérapeute à Bordeaux | Parcours et Expertise"
+description: "Découvrez le parcours de Mégane Bertaud, ergothérapeute D.E. spécialisée en pédiatrie, neurologie et réadaptation. Expérience internationale et approche centrée sur la personne."
+image: "/images/megane-bertaud.png"
 buttons: []
 
 # profile highlights
