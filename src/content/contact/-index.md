@@ -6,17 +6,12 @@ description: "Contactez Mégane Bertaud, ergothérapeute D.E. à Bordeaux. Tarif
 image: "/images/contact-besoins.jpg"
 ---
 
-## Tarifs
+Tarifs
 
-| Prestation | Tarif | Prise en charge |
-|------------|-------|----------------|
-| **Séance en cabinet** | 55€ | Remboursement partiel par certaines mutuelles |
-| **Bilan ergothérapique** | 200€ | Selon votre mutuelle |
-| **Visite à domicile** | 200€ | Selon votre mutuelle |
+Séance en cabinet : 55€ (remboursement partiel par certaines mutuelles)
+Bilan ergothérapique : 200€ (selon votre mutuelle)
+Visite à domicile : 200€ (selon votre mutuelle)
 
-**Moyens de paiement acceptés :**
-- Espèces
-- Chèque
-- Virement bancaire
+**Moyens de paiement acceptés :** Espèces, Chèque, Virement bancaire
 
 *Les séances sont remboursées partiellement par certaines mutuelles. Pensez à vérifier votre contrat.*
