@@ -1,37 +1,40 @@
 ---
 title: "À propos"
-page_title: "Ergothérapeute D.E., au service de l'autonomie"
-meta_title: "Mégane Bertaud — Ergothérapeute à Bordeaux | Parcours et Expertise"
-description: "Découvrez le parcours de Mégane Bertaud, ergothérapeute D.E. spécialisée en pédiatrie, neurologie et réadaptation. Expérience internationale et approche centrée sur la personne."
+page_title: "Mégane Bertaud, Ergothérapeute D.E. à Bordeaux"
+meta_title: "Mégane Bertaud — Ergothérapeute à Bordeaux | Expertise & Approche Humaine"
+description: "Découvrez Mégane Bertaud, ergothérapeute D.E. à Bordeaux (33000). Approche centrée sur la personne, expertise en pédiatrie et réadaptation. Cabinet L'Aire Familiale."
 image: "/images/megane-bertaud.png"
-buttons: []
+buttons:
+  - label: "Prendre rendez-vous"
+    link: "/contact"
+    enable: true
 
 # profile highlights
 profile_highlights:
-  - title: "Comprendre l'enfant dans sa globalité"
-    content: "Ma licence de psychologie nourrit mon regard sur le développement, le comportement, les émotions et l'environnement familial, afin de proposer un accompagnement plus ajusté."
-  - title: "Construire l'accompagnement ensemble"
-    content: "La formation à l'entretien motivationnel m'aide à favoriser l'adhésion, à écouter les priorités de chacun et à construire des objectifs concrets avec l'enfant, la famille ou l'adulte accompagné."
-  - title: "Observer pour mieux adapter"
-    content: "La mesure des fonctions motrices me permet d'objectiver les capacités, de suivre les progrès et d'adapter les activités ou le matériel au plus près des besoins du quotidien."
+  - title: "Mon approche : l'ergothérapie sur mesure"
+    content: "Chaque patient est unique. Je construis un accompagnement personnalisé, adapté à vos besoins, vos capacités et votre projet de vie, que vous soyez enfant, adulte ou personne âgée."
+  - title: "Expertise pédiatrique"
+    content: "Spécialisée dans l'accompagnement des enfants présentant des troubles du neurodéveloppement, des difficultés sensorielles ou motrices, ou des troubles de l'apprentissage."
+  - title: "Réadaptation adulte"
+    content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
 
 # counter
 counter:
-  - name: "Pays & territoires d'exercice"
+  - name: "Pays & territoires"
     number: 5
-    measurement: ""
+    measurement: "d'expérience"
     color: "#C16C58"
   - name: "Expériences professionnelles"
     number: 7
-    measurement: ""
+    measurement: "ans"
     color: "#D98C7A"
   - name: "Formations complémentaires"
     number: 3
-    measurement: ""
+    measurement: "spécialisations"
     color: "#B0846B"
-  - name: "Diplôme D.E. — HEPL de Liège"
+  - name: "Diplôme D.E."
     number: 2020
-    measurement: ""
+    measurement: "HEPL Liège"
     color: "#E5B299"
 
 # World map of work locations
@@ -127,8 +130,23 @@ members:
   member_list: []
 ---
 
-Au cours de mon parcours, j'ai eu l'opportunité d'accompagner des enfants présentant des profils variés : troubles du neurodéveloppement, troubles du spectre de l'autisme, paralysie cérébrale, difficultés sensorielles, motrices ou encore d'apprentissage. Ces expériences m'ont permis de développer une approche individualisée, centrée sur les besoins, les capacités et le rythme de chaque enfant.
+## Qui suis-je ?
 
-Mon objectif est d'aider l'enfant à gagner en autonomie, à développer sa confiance en lui et à trouver sa place dans les activités qui sont importantes pour lui, que ce soit à la maison, à l'école ou dans ses loisirs. J'accorde également une grande importance à la collaboration avec les familles et les professionnels qui l'entourent afin de construire un accompagnement cohérent et adapté à ses objectifs.
+**Mégane Bertaud, ergothérapeute D.E. à Bordeaux**, je mets mon expertise au service de **votre autonomie et de votre bien-être au quotidien**. 
 
-Bienveillante et à l'écoute, je veille à créer un environnement rassurant et motivant où chaque enfant peut s'épanouir, développer ses compétences et avancer à son propre rythme. Je suis convaincue que chaque enfant possède des forces sur lesquelles s'appuyer pour progresser et gagner en confiance dans son quotidien.
+Diplômée de la **HEPL de Liège en 2020**, j’ai développé une **approche humaine et personnalisée** de l’ergothérapie, nourrie par des **expériences riches et variées** en France et à l’international.
+
+## Ma philosophie
+
+Je crois que **chaque personne possède des forces uniques** sur lesquelles s’appuyer pour progresser. Mon rôle ? **Vous accompagner avec bienveillance et professionnalisme** pour que vous retrouviez confiance, autonomie et plaisir dans vos activités quotidiennes.
+
+Que ce soit pour **un enfant confronté à des troubles du neurodéveloppement**, **un adulte en rééducation**, ou **une personne âgée souhaitant maintenir son indépendance**, je construis avec vous un **parcours sur mesure**, adapté à vos besoins, votre rythme et vos objectifs.
+
+## Mon engagement
+
+✅ **Une écoute active** pour comprendre vos défis et vos attentes
+✅ **Des solutions concrètes** pour améliorer votre quotidien
+✅ **Un accompagnement pluridisciplinaire** en collaboration avec les familles et les professionnels de santé
+✅ **Un environnement bienveillant** où chaque progrès, petit ou grand, est célébré
+
+**Ensemble, faisons de chaque défi une opportunité de grandir.**
