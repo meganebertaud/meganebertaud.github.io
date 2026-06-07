@@ -18,7 +18,7 @@ const fontEntries = Object.entries(theme.fonts.font_family).filter(
   ([key]) => !key.includes("_type"),
 );
 
-const { title, meta_title, description, image, noindex, canonical } =
+const { title, meta_title, description, image, noindex, canonical, meta_keywords } =
   Astro.props;
 
 // Schema.org JSON-LD for Local Business
@@ -156,6 +156,10 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
         description ? description : config.metadata.meta_description
       )}
     />
+    <!-- meta-keywords -->
+    {Astro.props.meta_keywords && (
+      <meta name="keywords" content={plainify(Astro.props.meta_keywords)} />
+    )}
 
     <ClientRouter />
 

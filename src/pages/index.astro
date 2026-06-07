@@ -14,13 +14,15 @@ const homepage = (await getEntry(
 const { banner, gallery, key_features, service } = homepage.data;
 
 const meta_title = "Mégane Bertaud — Ergothérapeute D.E. à Bordeaux | Rééducation & Accompagnement";
-const meta_description = "Ergothérapeute D.E. à Bordeaux spécialisée en pédiatrie, neurologie et réadaptation fonctionnelle. Accompagnement personnalisé pour enfants et adultes. Cabinet L'Aire Familiale.";
+const meta_description = "Mégane Bertaud, ergothérapeute D.E. à Bordeaux (33000). Spécialisée en pédiatrie, neurologie, rééducation et réadaptation fonctionnelle pour enfants et adultes. Cabinet L'Aire Familiale.";
+const meta_keywords = "ergothérapeute bordeaux, ergothérapie bordeaux, mégane bertaud ergothérapeute, rééducation neurologique bordeaux, pédiatrie ergothérapie bordeaux, réadaptation fonctionnelle bordeaux";
 const canonical = "https://www.meganebertaud.fr";
 ---
 
 <Base
   meta_title={meta_title}
   description={meta_description}
+  meta_keywords={meta_keywords}
   canonical={canonical}
 >
   <Banner banner={banner} />
