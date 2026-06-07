@@ -18,25 +18,6 @@ profile_highlights:
   - title: "Réadaptation adulte"
     content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
 
-# counter
-counter:
-  - name: "Pays & territoires"
-    number: 5
-    measurement: "d'expérience"
-    color: "#C16C58"
-  - name: "Expériences professionnelles"
-    number: 7
-    measurement: "ans"
-    color: "#D98C7A"
-  - name: "Formations complémentaires"
-    number: 3
-    measurement: "spécialisations"
-    color: "#B0846B"
-  - name: "Diplôme D.E."
-    number: 2020
-    measurement: "HEPL Liège"
-    color: "#E5B299"
-
 # World map of work locations
 worldmap:
   title: Une pratique nourrie par des expériences variées, en France et à l'international
@@ -66,27 +47,6 @@ worldmap:
       lat: -22.27
       lng: 166.45
       align: left
-
-## our works
-features:
-  title: Les valeurs qui guident ma pratique
-  button:
-    label: Me contacter
-    link: "/contact"
-    enable: false
-  features_list:
-    - title: Approche centrée sur la personne
-      content: Construire chaque accompagnement avec le patient, autour de ses besoins, de ses capacités et de son projet de vie.
-    - title: Adaptation de l'environnement
-      content: "Penser le quotidien dans son ensemble : aménagements, aides techniques et solutions concrètes pour favoriser l'autonomie."
-    - title: Travail pluridisciplinaire
-      content: Collaborer étroitement avec les équipes de soin pour une prise en charge cohérente et globale.
-    - title: Créativité clinique
-      content: Adapter mes outils et ma pratique à chaque contexte, une qualité renforcée par mes expériences à l'international.
-    - title: Approche globale du soin
-      content: Considérer la personne dans sa globalité, en intégrant le lien entre corps, mouvement et bien-être.
-    - title: Mouvement & bien-être
-      content: Une réflexion thérapeutique enrichie par une formation de yoga teacher training.
 
 ## experiences
 experiences:
