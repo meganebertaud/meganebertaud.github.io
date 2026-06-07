@@ -51,15 +51,15 @@ const radius = 36;
 const getLabelClass = (index: number) => {
   switch (index) {
     case 0:
-      return "left-1/2 top-0 w-60 -translate-x-1/2 -translate-y-[calc(100%+1.25rem)] text-center";
+      return "left-1/2 top-0 w-60 -translate-x-1/2 -translate-y-[calc(100%+1.75rem)] text-center";
     case 1:
-      return "left-[calc(100%+1.25rem)] top-1/2 w-64 -translate-y-1/2 text-left";
+      return "left-[calc(100%+1.75rem)] top-1/2 w-64 -translate-y-1/2 text-left";
     case 2:
-      return "left-[calc(100%+1rem)] top-1/2 w-64 -translate-y-1/2 text-left";
+      return "left-[calc(100%+1.5rem)] top-1/2 w-64 -translate-y-1/2 text-left";
     case 3:
-      return "right-[calc(100%+1rem)] top-1/2 w-64 -translate-y-1/2 text-right";
+      return "right-[calc(100%+1.5rem)] top-1/2 w-64 -translate-y-1/2 text-right";
     default:
-      return "right-[calc(100%+1.25rem)] top-1/2 w-64 -translate-y-1/2 text-right";
+      return "right-[calc(100%+1.75rem)] top-1/2 w-64 -translate-y-1/2 text-right";
   }
 };
 
@@ -113,7 +113,7 @@ const items = engagement_cycle.items.map((label, index) => {
                 {item.number}
               </div>
               <p
-                class={`absolute text-sm font-medium leading-snug text-text-dark ${item.labelClass}`}
+                class={`absolute rounded-[1.5rem] bg-body/95 px-4 py-3 text-sm font-medium leading-snug text-text-dark shadow-[0_12px_30px_rgba(193,108,88,0.08)] ring-1 ring-border/70 ${item.labelClass}`}
               >
                 <span
                   class="mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.22em]"
