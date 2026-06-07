@@ -1,0 +1,120 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+
+type EngagementCycle = NonNullable<
+  CollectionEntry<"about">["data"]["engagement_cycle"]
+>;
+
+type Props = {
+  engagement_cycle: EngagementCycle;
+};
+
+const { engagement_cycle } = Astro.props as Props;
+
+const palette = [
+  { bg: "bg-[#f5b23f]", text: "text-[#f5b23f]" },
+  { bg: "bg-[#ff7a00]", text: "text-[#ff7a00]" },
+  { bg: "bg-[#f03f6d]", text: "text-[#f03f6d]" },
+  { bg: "bg-[#8d41c7]", text: "text-[#8d41c7]" },
+  { bg: "bg-[#2dbb58]", text: "text-[#2dbb58]" },
+];
+
+const angles = [-90, -18, 54, 126, 198];
+const radius = 36;
+
+const getLabelClass = (index: number) => {
+  switch (index) {
+    case 0:
+      return "left-1/2 top-0 w-60 -translate-x-1/2 -translate-y-[calc(100%+1.25rem)] text-center";
+    case 1:
+      return "left-[calc(100%+1.25rem)] top-1/2 w-64 -translate-y-1/2 text-left";
+    case 2:
+      return "left-[calc(100%+1rem)] top-1/2 w-64 -translate-y-1/2 text-left";
+    case 3:
+      return "right-[calc(100%+1rem)] top-1/2 w-64 -translate-y-1/2 text-right";
+    default:
+      return "right-[calc(100%+1.25rem)] top-1/2 w-64 -translate-y-1/2 text-right";
+  }
+};
+
+const items = engagement_cycle.items.map((label, index) => {
+  const angle = angles[index] ?? -90 + (index * 360) / engagement_cycle.items.length;
+  const radians = (angle * Math.PI) / 180;
+  const x = 50 + Math.cos(radians) * radius;
+  const y = 50 + Math.sin(radians) * radius;
+
+  return {
+    label,
+    index,
+    x,
+    y,
+    number: String(index + 1).padStart(2, "0"),
+    palette: palette[index % palette.length],
+    labelClass: getLabelClass(index),
+  };
+});
+---
+
+<section class="mx-auto mt-12 max-w-[1080px]">
+  <div class="rounded-[2rem] bg-white/95 px-6 py-10 shadow-xl ring-1 ring-border/60 md:px-10">
+    <div class="mx-auto max-w-[980px]">
+      <h2
+        class="text-center font-secondary text-h2-sm text-text-dark md:text-h2"
+        set:html={markdownify(engagement_cycle.title)}
+      />
+
+      <div class="relative mx-auto mt-12 hidden aspect-square max-w-[760px] lg:block">
+        <div class="absolute inset-[15%] rounded-full border-2 border-dashed border-text-dark/20"></div>
+        <div class="absolute inset-[26%] rounded-full border border-primary/15"></div>
+
+        <div class="absolute left-1/2 top-1/2 flex h-52 w-52 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-light text-center shadow-inner ring-1 ring-border/70">
+          <span class="font-secondary text-4xl text-text-dark">Mon</span>
+          <span class="mt-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+            engagement
+          </span>
+        </div>
+
+        {
+          items.map((item) => (
+            <div
+              class="absolute"
+              style={`left:${item.x}%; top:${item.y}%; transform: translate(-50%, -50%);`}
+            >
+              <div
+                class={`relative flex h-16 w-16 items-center justify-center rounded-full ${item.palette.bg} text-lg font-semibold text-white shadow-lg ring-4 ring-white`}
+              >
+                {item.number}
+              </div>
+              <p
+                class={`absolute text-sm font-medium leading-snug text-text-dark ${item.labelClass}`}
+              >
+                <span
+                  class={`mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.22em] ${item.palette.text}`}
+                >
+                  {item.number}
+                </span>
+                {item.label}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:hidden">
+        {
+          items.map((item) => (
+            <div class="flex items-start gap-4 rounded-[1.5rem] bg-light px-5 py-4 text-left ring-1 ring-border/50">
+              <div
+                class={`mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full ${item.palette.bg} text-sm font-semibold text-white shadow`}
+              >
+                {item.number}
+              </div>
+              <p class="text-sm leading-relaxed text-text-dark">{item.label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

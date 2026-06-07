@@ -101,6 +101,13 @@ const aboutCollection = defineCollection({
       )
       .optional(),
 
+    engagement_cycle: z
+      .object({
+        title: z.string(),
+        items: z.array(z.string()),
+      })
+      .optional(),
+
     // Counter
     counter: z.array(
       z.object({
