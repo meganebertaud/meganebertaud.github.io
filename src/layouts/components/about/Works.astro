@@ -1,10 +1,9 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  features: CollectionEntry<"about">["data"]["features"];
+  features: NonNullable<CollectionEntry<"about">["data"]["features"]>;
 };
 const {
   features: { title, button, features_list },

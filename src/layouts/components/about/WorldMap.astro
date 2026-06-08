@@ -126,9 +126,15 @@ const pins = worldmap
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const triggers = document.querySelectorAll("[data-worldmap-trigger]");
-    const chips = document.querySelectorAll("[data-worldmap-chip]");
-    const panels = document.querySelectorAll("[data-worldmap-panel]");
+    const triggers = document.querySelectorAll<HTMLElement>(
+      "[data-worldmap-trigger]",
+    );
+    const chips = document.querySelectorAll<HTMLElement>(
+      "[data-worldmap-chip]",
+    );
+    const panels = document.querySelectorAll<HTMLElement>(
+      "[data-worldmap-panel]",
+    );
 
     const activateLocation = (index: string) => {
       triggers.forEach((trigger) => {
