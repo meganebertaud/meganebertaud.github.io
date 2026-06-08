@@ -1,7 +1,7 @@
 ---
 banner:
   title: "Mégane Bertaud<br/>Ergothérapeute D.E. à Bordeaux"
-  content: "Je suis **Mégane Bertaud, ergothérapeute diplômée d'État (D.E.)** exerçant à **Bordeaux (33000)**. Spécialisée en **rééducation neurologique, traumatologique et réadaptation fonctionnelle** pour **enfants et adultes**, je propose des **séances d'ergothérapie sur mesure** au sein du **cabinet L'Aire Familiale**, situé **73 rue Condillac, 33000 Bordeaux**. Mon accompagnement aide mes patients à retrouver leur autonomie au quotidien, avec une approche centrée sur la personne et ses besoins spécifiques."
+  content: "Je suis **Mégane Bertaud, ergothérapeute diplômée d'État (D.E.)** exerçant à **Bordeaux (33000)**. Spécialisée en **rééducation neurologique et traumatologique**, ainsi qu'en réadaptation fonctionnelle pour **enfants et adultes**, je propose des **séances d'ergothérapie sur mesure** au sein du **cabinet L'Aire Familiale**, situé **73 rue Condillac, 33000 Bordeaux**. Mon accompagnement aide mes patients à retrouver leur autonomie au quotidien, avec une approche centrée sur la personne et ses besoins spécifiques."
   image: /images/megane-bertaud.webp
   button:
     enable: false

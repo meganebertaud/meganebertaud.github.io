@@ -8,6 +8,22 @@ import { markdownify } from "@/lib/utils/textConverter";
 const { footer } = menu;
 const { copyright, cabinet, location, availability, email, phone, footer_description } =
   config.params;
+const shareUrl = encodeURIComponent(Astro.url.href);
+const shareText = encodeURIComponent(config.site.title);
+const shareLinks = [
+  {
+    label: "LinkedIn",
+    url: `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`,
+  },
+  {
+    label: "Facebook",
+    url: `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`,
+  },
+  {
+    label: "E-mail",
+    url: `mailto:?subject=${shareText}&body=${shareUrl}`,
+  },
+];
 ---
 
 <footer class="footer bg-light">
@@ -20,12 +36,30 @@ const { copyright, cabinet, location, availability, email, phone, footer_descrip
         </p>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Réseaux</h6>
+        <h2 class="h6">Réseaux</h2>
 
         <Social source={social.main} className="social-icons mt-4 lg:mt-6" />
+
+        <h2 class="h6 mt-6">Partager</h2>
+        <ul class="mt-3 space-y-2">
+          {
+            shareLinks.map((item) => (
+              <li>
+                <a
+                  class="hover:text-primary hover:underline"
+                  href={item.url}
+                  target={item.label === "E-mail" ? undefined : "_blank"}
+                  rel={item.label === "E-mail" ? undefined : "noopener noreferrer nofollow"}
+                >
+                  Partager sur {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Liens rapides</h6>
+        <h2 class="h6">Liens rapides</h2>
         <ul>
           {
             footer.map((item, i) => (
@@ -39,7 +73,7 @@ const { copyright, cabinet, location, availability, email, phone, footer_descrip
         </ul>
       </div>
       <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Coordonnées</h6>
+        <h2 class="h6">Coordonnées</h2>
         <ul>
           {cabinet && <li class="mb-2 font-medium text-text-dark">{cabinet}</li>}
           <li class="mb-2">{location}</li>
@@ -57,7 +91,7 @@ const { copyright, cabinet, location, availability, email, phone, footer_descrip
         {
           availability && (
             <>
-              <h6 class="mt-6">Disponibilités</h6>
+              <h2 class="h6 mt-6">Disponibilités</h2>
               <p class="mt-2">{availability}</p>
             </>
           )

@@ -13,8 +13,8 @@ const homepage = (await getEntry(
 )) as CollectionEntry<"homepage">;
 const { banner, gallery, key_features, service } = homepage.data;
 
-const meta_title = "Mégane Bertaud — Ergothérapeute D.E. à Bordeaux | Rééducation & Accompagnement";
-const meta_description = "Mégane Bertaud, ergothérapeute D.E. à Bordeaux (33000). Spécialisée en pédiatrie, neurologie, rééducation et réadaptation fonctionnelle pour enfants et adultes. Cabinet L'Aire Familiale.";
+const meta_title = "Mégane Bertaud | Ergothérapeute à Bordeaux";
+const meta_description = "Ergothérapeute D.E. à Bordeaux, Mégane Bertaud accompagne enfants et adultes en pédiatrie, neurologie et réadaptation.";
 const meta_keywords = "ergothérapeute bordeaux, ergothérapie bordeaux, mégane bertaud ergothérapeute, rééducation neurologique bordeaux, pédiatrie ergothérapie bordeaux, réadaptation fonctionnelle bordeaux";
 const canonical = "https://www.meganebertaud.fr";
 ---
@@ -28,5 +28,40 @@ const canonical = "https://www.meganebertaud.fr";
   <Banner banner={banner} />
   <KeyFeatures key_features={key_features} />
   {gallery && <CreationsGallery {...gallery} />}
+  <section class="section pt-0">
+    <div class="container">
+      <div class="mx-auto max-w-[920px] rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-border/50 md:p-8">
+        <div class="grid gap-6 md:grid-cols-3">
+          <a
+            class="rounded-2xl bg-light p-5 transition hover:-translate-y-1 hover:bg-primary hover:text-white"
+            href="/about"
+          >
+            <h2 class="h5 mb-2">Découvrir mon approche</h2>
+            <p class="text-sm">
+              Comprendre mon parcours, mes valeurs et ma façon d'accompagner.
+            </p>
+          </a>
+          <a
+            class="rounded-2xl bg-light p-5 transition hover:-translate-y-1 hover:bg-primary hover:text-white"
+            href="/contact"
+          >
+            <h2 class="h5 mb-2">Voir les tarifs</h2>
+            <p class="text-sm">
+              Consulter les séances, bilans, paiements acceptés et remboursements.
+            </p>
+          </a>
+          <a
+            class="rounded-2xl bg-light p-5 transition hover:-translate-y-1 hover:bg-primary hover:text-white"
+            href="/contact"
+          >
+            <h2 class="h5 mb-2">Prendre rendez-vous</h2>
+            <p class="text-sm">
+              Accéder aux coordonnées du cabinet et à la prise de rendez-vous.
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
   <Service service={service} />
 </Base>

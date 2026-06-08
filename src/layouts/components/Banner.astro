@@ -3,6 +3,9 @@ import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 const { banner } = Astro.props;
 const { title, button, image, content } = banner;
+const imageAlt =
+  title?.toString().replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() ||
+  "Mégane Bertaud, ergothérapeute à Bordeaux";
 ---
 
 <section class="section banner relative">
@@ -24,7 +27,7 @@ const { title, button, image, content } = banner;
       <div class="mt-10 lg:col-5 lg:mt-0">
         <Image
           class="mx-auto w-full max-w-[360px] object-contain lg:max-w-[420px]"
-          alt={title?.toString().replace(/<[^>]*>/g, '') || "Mégane Bertaud, ergothérapeute à Bordeaux"}
+          alt={imageAlt}
           src={image}
           width={603}
           height={396}
@@ -37,7 +40,7 @@ const { title, button, image, content } = banner;
 
   <img
     class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
-    alt=""
+    alt="Décor graphique chaleureux"
     src="/images/banner-shape-warm.png"
     width={496}
     height={466}

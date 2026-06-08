@@ -1,15 +1,15 @@
 {
   "main": [
     {
-      "name": "Accueil",
+      "name": "Accueil du site",
       "url": "/"
     },
     {
-      "name": "À propos",
+      "name": "À propos de Mégane",
       "url": "/about"
     },
     {
-      "name": "Contact",
+      "name": "Contact et rendez-vous",
       "url": "/contact"
     }
   ],
