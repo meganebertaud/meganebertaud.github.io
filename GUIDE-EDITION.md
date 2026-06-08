@@ -20,7 +20,7 @@ Tout le contenu est rangé dans quelques fichiers texte. Tu n'as **jamais besoin
 | Dans le fichier | Sur le site |
 |---|---|
 | `page_title` | Le titre de la page |
-| `counter:` (chaque `name` / `number`) | Les chiffres clés |
+| `journey_highlights:` (chaque `title` + `content`) | Les cartes « Parcours en quelques repères » |
 | `gallery: title` | Le titre au-dessus des photos |
 | `features: features_list` | Les blocs « Les valeurs qui guident ma pratique » |
 | **Le texte tout en bas, après la ligne `---`** | **Ta biographie** (modifiable librement) |

@@ -2,8 +2,8 @@
 import PageHeader from "@/components/PageHeader.astro";
 import EngagementCycle from "@/components/about/EngagementCycle.astro";
 import Shape from "@/components/Shape.astro";
-import CounterComponent from "@/components/about/CounterComponent.astro";
 import Experiences from "@/components/about/Experiences.astro";
+import JourneyHighlights from "@/components/about/JourneyHighlights.astro";
 import WorldMap from "@/components/about/WorldMap.astro";
 import Works from "@/components/about/Works.astro";
 import Base from "@/layouts/Base.astro";
@@ -13,12 +13,12 @@ import { getEntry } from "astro:content";
 
 const about = (await getEntry("about", "-index")) as CollectionEntry<"about">;
 const {
-  counter,
   worldmap,
   experiences,
   profile_highlights,
   features,
   engagement_cycle,
+  journey_highlights,
 } = about.data;
 const page_data = {
   ...about.data,
@@ -61,7 +61,11 @@ const meta_keywords = "ergothérapeute bordeaux, mégane bertaud ergothérapeute
           </div>
         )
       }
-      {counter && <CounterComponent counter={counter} />}
+      {
+        journey_highlights && (
+          <JourneyHighlights journey_highlights={journey_highlights} />
+        )
+      }
     </div>
   </section>
 

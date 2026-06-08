@@ -108,15 +108,17 @@ const aboutCollection = defineCollection({
       })
       .optional(),
 
-    // Counter
-    counter: z.array(
-      z.object({
-        name: z.string(),
-        number: z.union([z.number(), z.string()]),
-        measurement: z.string(),
-        color: z.string(),
-      }),
-    ).optional(),
+    journey_highlights: z
+      .object({
+        title: z.string(),
+        items: z.array(
+          z.object({
+            title: z.string(),
+            content: z.string(),
+          }),
+        ),
+      })
+      .optional(),
 
     // Gallery
     gallery: z

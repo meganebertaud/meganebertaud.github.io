@@ -18,24 +18,17 @@ profile_highlights:
   - title: "Réadaptation adulte"
     content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
 
-# counter
-counter:
-  - name: "Pays & territoires"
-    number: 5
-    measurement: "d'expérience"
-    color: "#C16C58"
-  - name: "Expériences professionnelles"
-    number: 7
-    measurement: "ans"
-    color: "#D98C7A"
-  - name: "Formations complémentaires"
-    number: 3
-    measurement: "spécialisations"
-    color: "#B0846B"
-  - name: "Diplôme D.E."
-    number: 2020
-    measurement: "HEPL Liège"
-    color: "#E5B299"
+journey_highlights:
+  title: Parcours en quelques repères
+  items:
+    - title: Expériences internationales
+      content: Des pratiques en France, Belgique, Martinique, Togo, Inde et Nouvelle-Calédonie qui nourrissent une approche adaptable et concrète.
+    - title: Expertise clinique variée
+      content: Un parcours en neurologie, traumatologie, pédiatrie, gériatrie et réadaptation fonctionnelle.
+    - title: Formation continue
+      content: Des spécialisations et expériences complémentaires pour enrichir l'accompagnement au quotidien.
+    - title: Diplôme d'État
+      content: Ergothérapeute diplômée d'État, formée à la HEPL de Liège, diplôme obtenu en 2020.
 
 engagement_cycle:
   title: Mon engagement ?
