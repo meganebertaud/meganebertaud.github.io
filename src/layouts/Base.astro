@@ -8,7 +8,6 @@ import Footer from "@/partials/Footer.astro";
 import Header from "@/partials/Header.astro";
 import "@/styles/main.css";
 import { Font } from "astro:assets";
-import { ClientRouter } from "astro:transitions";
 import {
   GoogleTagmanager,
   GoogleTagmanagerNoscript,
@@ -188,7 +187,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     {
       fontEntries.map(([key]) => {
         const cssVar = `--font-${key}` as any;
-        return <Font cssVariable={cssVar} preload />;
+        return <Font cssVariable={cssVar} />;
       })
     }
 
@@ -220,8 +219,6 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     {meta_keywords && (
       <meta name="keywords" content={plainify(meta_keywords)} />
     )}
-
-    <ClientRouter />
 
     <!-- og-title -->
     <meta
