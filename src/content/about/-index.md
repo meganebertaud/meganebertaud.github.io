@@ -18,6 +18,25 @@ profile_highlights:
   - title: "Réadaptation adulte"
     content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
 
+# counter
+counter:
+  - name: "Pays & territoires"
+    number: 5
+    measurement: "d'expérience"
+    color: "#C16C58"
+  - name: "Expériences professionnelles"
+    number: 7
+    measurement: "ans"
+    color: "#D98C7A"
+  - name: "Formations complémentaires"
+    number: 3
+    measurement: "spécialisations"
+    color: "#B0846B"
+  - name: "Diplôme D.E."
+    number: 2020
+    measurement: "HEPL Liège"
+    color: "#E5B299"
+
 engagement_cycle:
   title: Mon engagement ?
   items:

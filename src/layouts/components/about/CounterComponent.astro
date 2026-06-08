@@ -3,7 +3,7 @@ import { markdownify } from "@/lib/utils/textConverter";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  counter: CollectionEntry<"about">["data"]["counter"];
+  counter: NonNullable<CollectionEntry<"about">["data"]["counter"]>;
 };
 const { counter } = Astro.props;
 ---
