@@ -1,6 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
-import { Image } from "astro:assets";
+import ResponsiveImage from "@/components/ResponsiveImage.astro";
 const { banner } = Astro.props;
 const { title, button, image, content } = banner;
 const imageAlt =
@@ -25,12 +25,14 @@ const imageAlt =
         }
       </div>
       <div class="mt-10 lg:col-5 lg:mt-0">
-        <Image
+        <ResponsiveImage
           class="mx-auto w-full max-w-[360px] object-contain lg:max-w-[420px]"
           alt={imageAlt}
           src={image}
-          width={603}
-          height={396}
+          width={400}
+          height={400}
+          widths={[200, 400]}
+          sizes="(min-width: 1024px) 420px, min(360px, 100vw)"
           loading="eager"
           decoding="async"
         />

@@ -1,5 +1,6 @@
 ---
 import PageHeader from "@/components/PageHeader.astro";
+import ResponsiveImage from "@/components/ResponsiveImage.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
@@ -39,11 +40,13 @@ const meta_keywords = "ergothérapeute bordeaux, contact mégane bertaud, tarifs
       <div class="row">
         <div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
           <div class="contact-img relative inline-flex pb-5 pl-5">
-            <Image
-              class="rounded-[2rem] shadow-xl"
+            <ResponsiveImage
+              class="w-full max-w-[500px] rounded-[2rem] shadow-xl"
               src="/images/contact-besoins.webp"
-              height={544}
-              width={500}
+              height={1600}
+              width={1177}
+              widths={[320, 500, 768, 1024]}
+              sizes="(min-width: 768px) 500px, calc(100vw - 3rem)"
               alt="Adulte et enfant marchant sur un chemin bordé de palmiers"
             />
             <Image

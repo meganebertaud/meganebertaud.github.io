@@ -1,0 +1,45 @@
+---
+type Props = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  widths?: number[];
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  decoding?: "async" | "auto" | "sync";
+  class?: string;
+};
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  widths = [width],
+  sizes = `${width}px`,
+  loading = "lazy",
+  decoding = "async",
+  class: className = "",
+} = Astro.props as Props;
+
+const variantFor = (imageSrc: string, imageWidth: number) =>
+  imageSrc.replace(/\.webp$/i, `-${imageWidth}.webp`);
+const sortedWidths = [...new Set(widths)].sort((a, b) => a - b);
+const srcset = sortedWidths
+  .map((imageWidth) => `${variantFor(src, imageWidth)} ${imageWidth}w`)
+  .join(", ");
+const fallbackSrc = variantFor(src, sortedWidths[sortedWidths.length - 1] ?? width);
+---
+
+<img
+  class={className}
+  src={fallbackSrc}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding={decoding}
+/>

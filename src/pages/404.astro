@@ -1,6 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { Image } from "astro:assets";
+import ResponsiveImage from "@/components/ResponsiveImage.astro";
 ---
 
 <Base title="Page introuvable" noindex={true}>
@@ -8,12 +8,14 @@ import { Image } from "astro:assets";
     <div class="container">
       <div class="flex h-[40vh] items-center justify-center">
         <div class="text-center">
-          <Image
+          <ResponsiveImage
             src="/images/404.webp"
             class="mb-4 inline"
             alt="logo"
             height={120}
             width={120}
+            widths={[120, 240]}
+            sizes="120px"
           />
           <h1 class="mb-4" set:html={"Erreur 404"} />
           <a href="/" class="btn btn-primary mt-8">Retour à l'accueil</a>
