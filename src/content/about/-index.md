@@ -11,12 +11,12 @@ buttons:
 
 # profile highlights
 profile_highlights:
-  - title: "Mon approche : l’ergothérapie sur mesure"
-    content: "Chaque patient est unique. Je construis un accompagnement personnalisé, adapté à vos besoins, vos capacités et votre projet de vie, que vous soyez enfant, adulte ou personne âgée."
-  - title: "Expertise pédiatrique"
-    content: "Spécialisée dans l'accompagnement des enfants présentant des troubles du neurodéveloppement, des difficultés sensorielles ou motrices, ou des troubles de l'apprentissage."
-  - title: "Réadaptation adulte"
-    content: "Accompagnement en neurologie, traumatologie et réadaptation fonctionnelle pour retrouver autonomie et qualité de vie au quotidien."
+  - title: "Comprendre l'enfant dans sa globalité"
+    content: "Ma licence de psychologie nourrit mon regard sur le développement, le comportement, les émotions et l'environnement familial, afin de proposer un accompagnement plus ajusté."
+  - title: "Construire l'accompagnement ensemble"
+    content: "La formation à l'entretien motivationnel m'aide à favoriser l'adhésion, à écouter les priorités de chacun et à construire des objectifs concrets avec l'enfant, la famille ou l'adulte accompagné."
+  - title: "Observer pour mieux adapter"
+    content: "La mesure des fonctions motrices me permet d'objectiver les capacités, de suivre les progrès et d'adapter les activités ou le matériel au plus près des besoins du quotidien."
 
 journey_highlights:
   title: Parcours en quelques repères
@@ -139,3 +139,11 @@ Diplômée de la HEPL de Liège en 2020, j’ai développé une approche humaine
 **Ma philosophie ?** Je crois que chaque personne possède des forces uniques sur lesquelles s’appuyer pour progresser.
 
 ***Mon rôle ?*** Vous accompagner avec bienveillance et professionnalisme pour que vous retrouviez confiance, autonomie et plaisir dans vos activités quotidiennes. Que ce soit pour un enfant confronté à des troubles du neurodéveloppement, un adulte en rééducation, ou une personne âgée souhaitant maintenir son indépendance, je construis avec vous un parcours sur mesure, adapté à vos besoins, votre rythme et vos objectifs.
+
+### Accompagnement de l'enfant
+
+Au cours de mon parcours, j'ai eu l'opportunité d'accompagner des enfants présentant des profils variés : troubles du neurodéveloppement, troubles du spectre de l'autisme, paralysie cérébrale, difficultés sensorielles, motrices ou encore d'apprentissage. Ces expériences m'ont permis de développer une approche individualisée, centrée sur les besoins, les capacités et le rythme de chaque enfant.
+
+Mon objectif est d'aider l'enfant à gagner en autonomie, à développer sa confiance en lui et à trouver sa place dans les activités qui sont importantes pour lui, que ce soit à la maison, à l'école ou dans ses loisirs. J'accorde également une grande importance à la collaboration avec les familles et les professionnels qui l'entourent afin de construire un accompagnement cohérent et adapté à ses objectifs.
+
+Bienveillante et à l'écoute, je veille à créer un environnement rassurant et motivant où chaque enfant peut s'épanouir, développer ses compétences et avancer à son propre rythme. Je suis convaincue que chaque enfant possède des forces sur lesquelles s'appuyer pour progresser et gagner en confiance dans son quotidien.

@@ -49,9 +49,10 @@ const meta_keywords = "ergothérapeute bordeaux, mégane bertaud ergothérapeute
           <div class="mx-auto mt-10 grid max-w-[980px] gap-4 md:grid-cols-3">
             {profile_highlights.map((highlight) => (
               <div class="rounded-[2rem] bg-white px-5 py-4 text-left shadow-lg ring-1 ring-border/50 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:ring-primary/30">
-                <h2 class="mb-2 text-xl font-semibold text-text-dark">
-                  {markdownify(highlight.title)}
-                </h2>
+                <h2
+                  class="mb-2 text-xl font-semibold text-text-dark"
+                  set:html={markdownify(highlight.title)}
+                />
                 <p
                   class="text-sm leading-relaxed"
                   set:html={markdownify(highlight.content)}
