@@ -10,30 +10,64 @@ type Props = {
 
 const { journey_highlights } = Astro.props;
 const accents = ["#C16C58", "#D98C7A", "#B0846B", "#E5B299"];
+const icons = [
+  [
+    "M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Z",
+    "M2 12h20",
+    "M12 2a15.3 15.3 0 0 1 0 20",
+    "M12 2a15.3 15.3 0 0 0 0 20",
+  ],
+  ["M9 3h6v4H9z", "M5 7h14v14H5z", "M12 11v6", "M9 14h6"],
+  [
+    "M4 19.5A2.5 2.5 0 0 1 6.5 17H20",
+    "M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5Z",
+    "M8 7h8",
+    "M8 11h6",
+  ],
+  [
+    "M6 3h12v12H6z",
+    "M9 7h6",
+    "M9 11h6",
+    "M9 15l-2 6 5-3 5 3-2-6",
+  ],
+];
 ---
 
 <section class="mx-auto mt-12 max-w-[1080px]">
-  <div class="rounded-[2rem] bg-white/95 px-6 py-9 shadow-xl ring-1 ring-border/60 md:px-10">
-    <h2
-      class="text-center font-secondary text-h2-sm text-text-dark md:text-h2"
-      set:html={markdownify(journey_highlights.title)}
-    />
-    <div class="mt-8 grid gap-4 md:grid-cols-2">
-      {
-        journey_highlights.items.map((item, index) => (
-          <article class="rounded-[1.5rem] bg-body/80 p-5 text-left ring-1 ring-border/60 transition duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-primary/30">
-            <span
-              class="mb-4 block h-2 w-12 rounded-full"
-              style={{ backgroundColor: accents[index % accents.length] }}
-            />
-            <h3
-              class="mb-3 text-xl font-semibold text-text-dark"
-              set:html={markdownify(item.title)}
-            />
-            <p class="leading-relaxed" set:html={markdownify(item.content)} />
-          </article>
-        ))
-      }
-    </div>
+  <h2
+    class="text-center font-secondary text-h2-sm text-text-dark md:text-h2"
+    set:html={markdownify(journey_highlights.title)}
+  />
+  <div class="mt-8 grid gap-4 md:grid-cols-2">
+    {
+      journey_highlights.items.map((item, index) => (
+        <article class="rounded-[1.5rem] bg-white/90 p-5 text-left shadow-lg ring-1 ring-border/60 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:ring-primary/30">
+          <div
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl text-white shadow-md"
+            style={{ backgroundColor: accents[index % accents.length] }}
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              {icons[index % icons.length].map((path) => (
+                <path d={path} />
+              ))}
+            </svg>
+          </div>
+          <h3
+            class="mb-3 text-xl font-semibold text-text-dark"
+            set:html={markdownify(item.title)}
+          />
+          <p class="leading-relaxed" set:html={markdownify(item.content)} />
+        </article>
+      ))
+    }
   </div>
 </section>
