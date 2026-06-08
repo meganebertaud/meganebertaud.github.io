@@ -6,11 +6,11 @@
     },
     {
       "name": "À propos de Mégane",
-      "url": "/about"
+      "url": "/about/"
     },
     {
       "name": "Contact et rendez-vous",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ],
 
@@ -21,11 +21,15 @@
     },
     {
       "name": "À propos",
-      "url": "/about"
+      "url": "/about/"
+    },
+    {
+      "name": "Ergothérapeute Bordeaux",
+      "url": "/ergotherapeute-bordeaux/"
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ]
 }

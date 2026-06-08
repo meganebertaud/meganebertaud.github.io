@@ -18,7 +18,16 @@ const fontEntries = Object.entries(theme.fonts.font_family).filter(
   ([key]) => !key.includes("_type"),
 );
 
-const { title, meta_title, description, image, noindex, canonical, meta_keywords } =
+const {
+  title,
+  meta_title,
+  description,
+  image,
+  noindex,
+  canonical,
+  meta_keywords,
+  extra_schema,
+} =
   Astro.props;
 const pageImageUrl = new URL(
   image ? image : config.metadata.meta_image,
@@ -155,6 +164,16 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     <!-- JSON-LD Schemas for SEO -->
     <script is:inline type="application/ld+json" set:html={localBusinessSchema} />
     <script is:inline type="application/ld+json" set:html={personSchema} />
+    {
+      extra_schema &&
+        [extra_schema].flat().map((schema) => (
+          <script
+            is:inline
+            type="application/ld+json"
+            set:html={typeof schema === "string" ? schema : JSON.stringify(schema)}
+          />
+        ))
+    }
     
     <!-- Google Search Console verification -->
     <meta name="google-site-verification" content="sWZ2vh2fYMpsXu_JrPMWg-54j0SVbi_Z3JWyHKfaZkE" />

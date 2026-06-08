@@ -6,7 +6,7 @@ banner:
   button:
     enable: false
     label: Me contacter
-    link: "/contact"
+    link: "/contact/"
 
 ##key features
 key_features:

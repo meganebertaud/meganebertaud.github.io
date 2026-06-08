@@ -1,0 +1,182 @@
+---
+import Base from "@/layouts/Base.astro";
+import config from "@/config/config.json";
+
+const meta_title = "Ergothérapeute à Bordeaux | Mégane Bertaud";
+const meta_description =
+  "Ergothérapeute D.E. à Bordeaux, Mégane Bertaud accompagne enfants et adultes au cabinet L'Aire Familiale. Séances, bilans et rendez-vous.";
+const meta_keywords =
+  "ergothérapeute bordeaux, ergotherapie bordeaux, ergothérapeute enfant bordeaux, cabinet ergothérapie bordeaux, bilan ergothérapique bordeaux";
+const canonical = "https://www.meganebertaud.fr/ergotherapeute-bordeaux/";
+
+const faqItems = [
+  {
+    question: "Quand consulter un ergothérapeute à Bordeaux ?",
+    answer:
+      "Un ergothérapeute peut accompagner un enfant, un adulte ou une personne âgée lorsque les activités du quotidien deviennent difficiles : autonomie, gestes scolaires, motricité, troubles sensoriels, rééducation neurologique, réadaptation ou adaptation de l'environnement.",
+  },
+  {
+    question: "Proposez-vous des séances d'ergothérapie pour les enfants ?",
+    answer:
+      "Oui. L'accompagnement pédiatrique peut concerner le développement, les apprentissages, la motricité fine, l'écriture, l'autonomie, les troubles neurodéveloppementaux, les particularités sensorielles ou l'adaptation de l'environnement familial et scolaire.",
+  },
+  {
+    question: "Quels sont les tarifs d'une séance d'ergothérapie ?",
+    answer:
+      "Une séance au cabinet est proposée à 55 € pour 45 minutes ou 40 € pour 30 minutes selon les capacités d'attention du patient. Le bilan ergothérapique et la visite à domicile sont indiqués à 200 €.",
+  },
+  {
+    question: "Les séances d'ergothérapie sont-elles remboursées ?",
+    answer:
+      "Les séances ne sont pas remboursées par l'Assurance Maladie en libéral, mais certaines mutuelles peuvent proposer une prise en charge partielle. Il est conseillé de vérifier les conditions de votre contrat.",
+  },
+  {
+    question: "Où se situe le cabinet d'ergothérapie à Bordeaux ?",
+    answer:
+      "Les séances ont lieu au cabinet L'Aire Familiale, 73 rue Condillac, 33000 Bordeaux, sur rendez-vous les mardis et mercredis de 8h à 19h.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<Base
+  meta_title={meta_title}
+  description={meta_description}
+  meta_keywords={meta_keywords}
+  canonical={canonical}
+  extra_schema={faqSchema}
+>
+  <section class="page-hero py-16">
+    <div class="container">
+      <div class="mx-auto max-w-[880px] text-center">
+        <ul class="breadcrumb inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-light px-4 py-2">
+          <li class="leading-none text-text-dark">
+            <a href="/" class="inline-flex items-center text-primary">
+              <span class="text-sm leading-none">Accueil</span>
+            </a>
+          </li>
+          <li class="text-sm leading-none text-text-dark">
+            / Ergothérapeute à Bordeaux
+          </li>
+        </ul>
+        <h1 class="mb-5 mt-8">Ergothérapeute à Bordeaux</h1>
+        <p class="mx-auto max-w-[760px] text-lg">
+          Mégane Bertaud, ergothérapeute D.E., accompagne les enfants, les
+          adultes et les personnes âgées au cabinet L'Aire Familiale, au 73 rue
+          Condillac à Bordeaux.
+        </p>
+        <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+          <a class="btn btn-primary" href="/contact/">Prendre rendez-vous</a>
+          <a class="btn btn-outline-primary" href="/about/">Découvrir mon approche</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container">
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-border/50">
+          <h2 class="h4 mb-3">Pour les enfants</h2>
+          <p>
+            Accompagnement autour de l'autonomie, des apprentissages, de la
+            motricité fine, de l'écriture, des troubles neurodéveloppementaux,
+            des particularités sensorielles et des adaptations à la maison ou à
+            l'école.
+          </p>
+        </article>
+        <article class="rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-border/50">
+          <h2 class="h4 mb-3">Pour les adultes</h2>
+          <p>
+            Rééducation neurologique, traumatologique et réadaptation
+            fonctionnelle pour retrouver plus d'autonomie dans les activités du
+            quotidien, avec des objectifs construits avec le patient.
+          </p>
+        </article>
+        <article class="rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-border/50">
+          <h2 class="h4 mb-3">Au quotidien</h2>
+          <p>
+            Conseils, aides techniques, aménagements et adaptation de
+            l'environnement pour favoriser la participation, la sécurité et le
+            confort dans les situations de vie réelles.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-light">
+    <div class="container">
+      <div class="row items-start">
+        <div class="lg:col-6">
+          <h2>Cabinet d'ergothérapie à Bordeaux</h2>
+          <p class="mt-5">
+            Les séances se déroulent au <strong>{config.params.cabinet}</strong>,
+            {` ${config.params.location}`}. La prise de rendez-vous se fait en
+            ligne via Docorga, ou directement par téléphone et e-mail pour toute
+            question.
+          </p>
+          <p class="mt-4">
+            Disponibilités : {config.params.availability}. Les séances au cabinet
+            peuvent durer 30 ou 45 minutes selon les capacités d'attention du
+            patient.
+          </p>
+        </div>
+        <div class="mt-8 lg:col-5 lg:ml-auto lg:mt-0">
+          <div class="rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-border/50">
+            <h2 class="h4 mb-4">Informations pratiques</h2>
+            <ul class="space-y-3">
+              <li><strong>Cabinet :</strong> {config.params.cabinet}</li>
+              <li><strong>Adresse :</strong> {config.params.location}</li>
+              <li><strong>Téléphone :</strong> {config.params.phone}</li>
+              <li><strong>E-mail :</strong> {config.params.email}</li>
+            </ul>
+            <div class="mt-6 flex flex-col gap-3">
+              <a class="btn btn-primary" href="/contact/">Voir les tarifs</a>
+              <a
+                class="btn btn-outline-primary"
+                href={config.params.map_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Voir l'itinéraire
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="mx-auto max-w-[860px]">
+        <h2 class="text-center">Questions fréquentes</h2>
+        <div class="mt-8 space-y-4">
+          {
+            faqItems.map((item) => (
+              <details class="rounded-2xl bg-white p-5 shadow-lg ring-1 ring-border/50">
+                <summary class="cursor-pointer font-semibold text-text-dark">
+                  {item.question}
+                </summary>
+                <p class="mt-3">{item.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
