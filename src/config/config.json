@@ -35,6 +35,7 @@
     "email": "Mbertaud.ergo@gmail.com",
     "cabinet": "Cabinet L'Aire Familiale",
     "location": "73 rue Condillac, 33000 Bordeaux",
+    "map_url": "https://www.google.com/maps/place/73+Rue+Condillac,+33000+Bordeaux",
     "availability": "Mardi et mercredi de 8h à 19h",
     "phone": "+33 7 80 29 89 66",
     "contact_form_action": "#",
@@ -44,7 +45,7 @@
 
   "metadata": {
     "meta_author": "Mégane Bertaud",
-    "meta_image": "/images/megane-bertaud.png",
+    "meta_image": "/images/megane-bertaud.webp",
     "meta_description": "Mégane Bertaud, ergothérapeute D.E. Rééducation neurologique et traumatologique, réadaptation fonctionnelle. Expérience en France et à l'international."
   }
 }

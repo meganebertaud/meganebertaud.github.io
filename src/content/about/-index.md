@@ -3,7 +3,7 @@ title: "À propos"
 page_title: "À propos"
 meta_title: "Mégane Bertaud — Ergothérapeute à Bordeaux | Expertise & Approche Humaine"
 description: "Découvrez Mégane Bertaud, ergothérapeute D.E. à Bordeaux (33000). Approche centrée sur la personne, expertise en pédiatrie et réadaptation. Cabinet L'Aire Familiale."
-image: "/images/megane-bertaud.png"
+image: "/images/megane-bertaud.webp"
 buttons:
   - label: "Prendre rendez-vous"
     link: "/contact"
@@ -94,10 +94,10 @@ experiences:
   title: "Des expériences qui ont façonné ma vision de l'ergothérapie"
   experience_list:
     - title: "Bénévolat au Togo : l'ergothérapie en contexte humanitaire"
-      image: "/images/experience-togo.jpg"
+      image: "/images/experience-togo.webp"
       images:
-        - "/images/experience-togo-2.jpg"
-        - "/images/experience-togo-3.jpg"
+        - "/images/experience-togo-2.webp"
+        - "/images/experience-togo-3.webp"
       content: |
         Durant six mois, j'ai eu le privilège de m'engager bénévolement au Togo au sein d'une école accueillant des enfants porteurs d'autisme, de paralysie cérébrale et de TDAH. Une expérience fondatrice, humaine et clinique, qui a profondément façonné ma vision de l'ergothérapie.
 
@@ -109,8 +109,8 @@ experiences:
     - title: "Formation d'enseignante de yoga (200h) — Rishikesh, Inde"
       images_below: true
       images:
-        - "/images/experience-yoga.jpg"
-        - "/images/experience-yoga-2.jpg"
+        - "/images/experience-yoga.webp"
+        - "/images/experience-yoga-2.webp"
       content: |
         En octobre 2025, j'ai pris le temps de faire une pause dans mon rythme professionnel pour vivre une expérience un peu différente : une formation de 200 heures en enseignement du yoga, après quelques jours de voyage au Sri Lanka qui ont déjà marqué un premier ralentissement.
 

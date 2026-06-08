@@ -10,7 +10,7 @@ const entry = (await getEntry(
   "contact",
   "-index"
 )) as CollectionEntry<"contact">;
-const { appointment_url, cabinet, location, availability, email, phone } =
+const { appointment_url, cabinet, location, map_url, availability, email, phone } =
   config.params;
 const contact = entry.data;
 const page_data = {
@@ -41,7 +41,7 @@ const meta_keywords = "ergothérapeute bordeaux, contact mégane bertaud, tarifs
           <div class="contact-img relative inline-flex pb-5 pl-5">
             <Image
               class="rounded-[2rem] shadow-xl"
-              src="/images/contact-besoins.jpg"
+              src="/images/contact-besoins.webp"
               height={544}
               width={500}
               alt="Adulte et enfant marchant sur un chemin bordé de palmiers"
@@ -86,6 +86,23 @@ const meta_keywords = "ergothérapeute bordeaux, contact mégane bertaud, tarifs
               <h2 class="h5 mb-2">{cabinet}</h2>
               <p>{location}</p>
               {availability && <p class="mt-2">{availability}</p>}
+              <a
+                class="mt-4 inline-flex font-semibold text-primary hover:underline"
+                href={map_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Voir l'itinéraire
+              </a>
+            </div>
+
+            <div class="rounded-xl bg-white p-5 shadow-lg ring-1 ring-border/50">
+              <h2 class="h5 mb-2">Accès au cabinet</h2>
+              <p>
+                Les séances ont lieu au cabinet L'Aire Familiale, sur rendez-vous
+                uniquement. Pour organiser votre venue ou préciser vos besoins,
+                contactez-moi par téléphone ou par e-mail.
+              </p>
             </div>
           </div>
         </div>

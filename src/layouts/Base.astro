@@ -1,6 +1,7 @@
 ---
 import TwSizeIndicator from "@/components/TwSizeIndicator.astro";
 import config from "@/config/config.json";
+import social from "@/config/social.json";
 import theme from "@/config/theme.json";
 import { plainify } from "@/lib/utils/textConverter";
 import Footer from "@/partials/Footer.astro";
@@ -25,35 +26,98 @@ const pageImageUrl = new URL(
   config.site.base_url,
 ).href;
 const siteLogoUrl = new URL(config.site.logo, config.site.base_url).href;
-const profileImageUrl = new URL("/images/megane-bertaud.png", config.site.base_url).href;
+const profileImageUrl = new URL("/images/megane-bertaud.webp", config.site.base_url).href;
+const appointmentUrl = config.params.appointment_url;
+const mapUrl = config.params.map_url;
+const linkedinUrl = social.main.find((item) => item.name === "linkedin")?.link;
+const sameAs = [linkedinUrl, appointmentUrl].filter(Boolean);
+
+const address = {
+  "@type": "PostalAddress",
+  "streetAddress": "73 rue Condillac",
+  "addressLocality": "Bordeaux",
+  "postalCode": "33000",
+  "addressCountry": "FR"
+};
+
+const openingHoursSpecification = [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Tuesday", "Wednesday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  }
+];
+
+const serviceOffers = [
+  {
+    "@type": "Offer",
+    "name": "Séance d'ergothérapie en cabinet — 45 min",
+    "price": "55",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": appointmentUrl
+  },
+  {
+    "@type": "Offer",
+    "name": "Séance d'ergothérapie en cabinet — 30 min",
+    "price": "40",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": appointmentUrl
+  },
+  {
+    "@type": "Offer",
+    "name": "Bilan ergothérapique",
+    "price": "200",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": appointmentUrl
+  },
+  {
+    "@type": "Offer",
+    "name": "Visite à domicile",
+    "price": "200",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": appointmentUrl
+  }
+];
 
 // Schema.org JSON-LD for Local Business
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "MedicalBusiness",
   "name": "Mégane Bertaud — Ergothérapeute D.E.",
   "description": "Ergothérapeute D.E. spécialisée en rééducation neurologique, traumatologique et réadaptation fonctionnelle pour enfants et adultes.",
   "@id": "https://www.meganebertaud.fr/#localbusiness",
   "url": "https://www.meganebertaud.fr",
   "telephone": config.params.phone,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "73 rue Condillac",
-    "addressLocality": "Bordeaux",
-    "postalCode": "33000",
-    "addressCountry": "FR"
-  },
+  "email": config.params.email,
+  "address": address,
   "openingHours": "Tu,We 08:00-19:00",
+  "openingHoursSpecification": openingHoursSpecification,
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "44.837789",
     "longitude": "-0.579180"
   },
-  "sameAs": ["https://www.docorga.com/"],
+  "sameAs": sameAs,
   "logo": siteLogoUrl,
   "image": pageImageUrl,
-  "hasMap": "https://www.google.com/maps/place/73+Rue+Condillac,+33000+Bordeaux/@44.837789,-0.579180",
-  "priceRange": "$$"
+  "hasMap": mapUrl,
+  "priceRange": "40€-200€",
+  "medicalSpecialty": "OccupationalTherapy",
+  "areaServed": {
+    "@type": "City",
+    "name": "Bordeaux"
+  },
+  "makesOffer": serviceOffers,
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": appointmentUrl,
+    "name": "Prendre rendez-vous"
+  }
 });
 
 // Schema.org JSON-LD for Person
@@ -64,7 +128,7 @@ const personSchema = JSON.stringify({
   "description": "Ergothérapeute D.E. spécialisée en pédiatrie, neurologie et réadaptation fonctionnelle.",
   "url": "https://www.meganebertaud.fr",
   "image": profileImageUrl,
-  "sameAs": ["https://www.linkedin.com/in/megane-bertaud/"],
+  "sameAs": linkedinUrl ? [linkedinUrl] : [],
   "hasOccupation": {
     "@type": "Occupation",
     "name": "Ergothérapeute"
@@ -102,7 +166,7 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
     <link rel="apple-touch-icon" href={config.site.logo} />
     <link rel="manifest" href="/site.webmanifest" />
     <!-- Author and social links -->
-    <link rel="me" href="https://www.linkedin.com/in/megane-bertaud/" />
+    {linkedinUrl && <link rel="me" href={linkedinUrl} />}
     <meta name="author" content={config.metadata.meta_author} />
     <!-- theme meta -->
     <meta name="theme-name" content="pinwheel-astro" />
@@ -207,8 +271,6 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, config.site.base_u
       name="twitter:image"
       content={pageImageUrl}
     />
-    <meta name="twitter:creator" content="@meganebertaud" />
-    <meta name="twitter:site" content="@meganebertaud" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>

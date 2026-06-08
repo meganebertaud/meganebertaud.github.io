@@ -3,7 +3,7 @@ title: Contact
 page_title: Échangeons sur vos besoins
 meta_title: "Contact — Mégane Bertaud, Ergothérapeute à Bordeaux | Prendre RDV & Tarifs"
 description: "Contactez Mégane Bertaud, ergothérapeute D.E. à Bordeaux. Tarifs : 55€ ou 40€ séance, 200€ bilan. Prise de RDV en ligne via Docorga."
-image: "/images/contact-besoins.jpg"
+image: "/images/contact-besoins.webp"
 ---
 
 ### Tarifs
