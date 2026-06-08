@@ -37,8 +37,9 @@ const siteLogoUrl = new URL(config.site.logo, config.site.base_url).href;
 const profileImageUrl = new URL("/images/megane-bertaud.webp", config.site.base_url).href;
 const appointmentUrl = config.params.appointment_url;
 const mapUrl = config.params.map_url;
+const googleBusinessUrl = config.params.google_business_url;
 const linkedinUrl = social.main.find((item) => item.name === "linkedin")?.link;
-const sameAs = [linkedinUrl, appointmentUrl].filter(Boolean);
+const sameAs = [linkedinUrl, appointmentUrl, googleBusinessUrl].filter(Boolean);
 
 const address = {
   "@type": "PostalAddress",
