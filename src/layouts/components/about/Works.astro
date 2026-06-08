@@ -8,13 +8,16 @@ type Props = {
 const {
   features: { title, button, features_list },
 } = Astro.props;
+
+const titleColumnClass = button.enable ? "md:col-5" : "w-full";
+const titleClass = button.enable ? "text-center md:text-left" : "text-center";
 ---
 
 <section class="section">
   <div class="container">
     <div class="row items-center justify-between">
-      <div class="md:col-5">
-        <h2 class="text-center md:text-left" set:html={markdownify(title)} />
+      <div class={titleColumnClass}>
+        <h2 class={titleClass} set:html={markdownify(title)} />
       </div>
       {
         button.enable && (
