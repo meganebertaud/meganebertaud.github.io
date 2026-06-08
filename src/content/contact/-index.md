@@ -10,10 +10,10 @@ image: "/images/contact-besoins.jpg"
 
 | Prestation | Tarif |
 |------------|-------|
-| Séance en cabinet | 55 €<sup>*</sup> |
-| Bilan ergothérapique | 200 €<sup>*</sup> |
-| Visite à domicile | 200 €<sup>*</sup> |
+| Séance en cabinet | 55 €<sup class="text-primary font-semibold">*</sup> |
+| Bilan ergothérapique | 200 €<sup class="text-primary font-semibold">*</sup> |
+| Visite à domicile | 200 €<sup class="text-primary font-semibold">*</sup> |
 
-**Moyens de paiement acceptés :** Espèces, Chèque, Virement bancaire
+**Moyens de paiement acceptés :** Espèces, Chèque, Carte bancaire, Virement bancaire
 
-<sup>*</sup> Les séances sont remboursées partiellement par certaines mutuelles. Pensez à vérifier votre contrat.
+<sup class="text-primary font-semibold">*</sup> Les séances sont remboursées partiellement par certaines mutuelles. Pensez à vérifier votre contrat.
