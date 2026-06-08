@@ -98,7 +98,7 @@ worldmap:
 
 # experiences
 experiences:
-  title: Des expériences qui ont façonné ma pratique
+  title: "Des expériences qui ont façonné ma vision de l'ergothérapie"
   experience_list:
     - title: "Bénévolat au Togo : l'ergothérapie en contexte humanitaire"
       image: "/images/experience-togo.jpg"
